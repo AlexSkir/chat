@@ -1,0 +1,7 @@
+.footer {
+  background: rgb(180, 191, 241);
+}
+.rights, .footer-mail {
+  color: #292733;
+  padding-left: 15px;
+}

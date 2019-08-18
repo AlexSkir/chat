@@ -1,0 +1,6 @@
+.container-fluid {
+  display: grid;
+  grid-template-rows: 50px 1fr 50px;
+  height: 100vh;
+  background: rgb(250, 214, 148);
+}

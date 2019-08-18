@@ -1,0 +1,104 @@
+@for $i from 1 through 100 {
+  .char#{$i} { 
+    transform: (rotate(65-($i*6)+deg));
+  }
+}
+.smile-text {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 230px;
+  width: 391px;
+  border-radius: 50%;
+  outline: none;
+}
+span[class^="char"] {
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 20px;
+  height: 220px;
+  transform-origin: top center;
+  color: rgb(41, 39, 51);
+}
+
+.circle, .circle-blink {
+  width: 40px;
+  height: 60px;
+  margin: 20px;
+  border-radius: 50%;
+  background: rgb(41, 39, 51);
+  z-index: 10;
+}
+.blinked {
+  border-radius: 50%;
+  background: rgb(41, 39, 51);
+}
+.smile-click {
+  position: absolute;
+  top: 110px;
+  left: 233px;
+  width: 60px;
+  height: 80px;
+  border: 1px solid #292733;
+  border-radius: 30%;
+  transform: rotate(-50deg);
+}
+.smile-click-text {
+  display: block;
+  transform: rotate(90deg);
+}
+
+.smile-text:hover {
+  cursor: pointer;
+  .circle-blink {
+    background: rgb(250, 214, 148);
+  }
+  .blinked {
+    width: 60px;
+    height: 20px;
+    background: #292733;
+  }
+  .shadow {
+    position: relative;
+    top: 30px;
+    width: 60px;
+    height: 20px;
+    background: rgb(250, 214, 148);
+    border-radius: 50%;
+    box-shadow: none!important;
+  }
+  span[class^="char"] {
+    background: linear-gradient(transparent 83%, #292733 93%);
+    color: rgb(250, 214, 148);
+  }
+}
+.smile-text:active {
+  span[class^="char"] {
+    background: linear-gradient(transparent 83%, black 93%);
+    color: rgb(250, 214, 148);
+  }
+  .circle, .blinked {
+    background: black;
+  }
+}
+
+@media (max-width: 400px) {
+  @for $i from 1 through 100 {
+    .char#{$i} {
+      transform: (rotate(55-($i*5)+deg));
+    }
+  }
+  span[class^="char"] {
+    width: 13px;
+    font-size: 10px;
+  }
+  .smile-text, .smile-text span {
+    height: 180px;
+  }
+  .smile-text {
+    width: 300px;
+  }
+}
