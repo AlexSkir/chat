@@ -28,6 +28,12 @@
     }
   },
   "rules": {
+    "no-plusplus": [
+      2,
+      {
+        "allowForLoopAfterthoughts": true
+      }
+    ],
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
     "react/jsx-one-expression-per-line": "error",

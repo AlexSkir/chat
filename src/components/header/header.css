@@ -42,6 +42,13 @@
   top: 120px;
   right: 20px;
 }
+.join-chat-link {
+  color: inherit;
+}
+.join-chat-link:hover {
+  color: inherit;
+  text-decoration: none;
+}
 
 @media (max-width: 400px) {
   .icon-name {

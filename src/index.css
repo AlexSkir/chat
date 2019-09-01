@@ -4,3 +4,9 @@
   height: 100vh;
   background: rgb(250, 214, 148);
 }
+
+@media (max-width: 500px) {
+  .container-fluid{
+    grid-template-rows: 50px 1fr;
+  }
+}

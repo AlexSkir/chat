@@ -3,19 +3,21 @@ import { HashRouter as Router, Route } from 'react-router-dom';
 import Header from 'components/header';
 import MainPage from 'containers/mainPage';
 import Footer from 'components/footer';
+import Chat from 'containers/chatPage/chatPage';
 
 export default class App extends Component {
+  constructor() {
+    super();
+    this.state = {};
+  }
+
   render() {
     return (
       <Router>
         <div className="container-fluid">
           <Header />
           <Route path="/" exact component={MainPage} />
-          <Route
-            path="/chat"
-            render={() => <MainPage onButtonClick={this.onButtonClick} />}
-            exact
-          />
+          <Route path="/chat" component={Chat} />
           {/* <Route
             path="/commonpage"
             render={props => <CommonPage onButtonClick={this.onButtonClick} />}

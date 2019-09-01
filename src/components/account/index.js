@@ -12,6 +12,7 @@ import LogOut from '@material-ui/icons/PowerOff';
 import EditIcon from '@material-ui/icons/Edit';
 import theme from 'theme/theme';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const StyledMenu = withStyles({
   paper: {
@@ -92,13 +93,14 @@ export default function Account(props) {
           <StyledMenuItem
             onClick={() => {
               setAnchorEl(null);
-              props.joinChatHandler();
             }}
           >
             <ListItemIcon>
               <ChatIcon />
             </ListItemIcon>
-            <ListItemText primary="Join Chat" />
+            <Link to="/chat" className="join-chat-link">
+              <ListItemText primary="Join Chat" />
+            </Link>
           </StyledMenuItem>
           <StyledMenuItem
             onClick={() => {
@@ -120,6 +122,5 @@ export default function Account(props) {
 Account.propTypes = {
   name: PropTypes.string.isRequired,
   editNameHandler: PropTypes.func.isRequired,
-  joinChatHandler: PropTypes.func.isRequired,
   logOutHandler: PropTypes.func.isRequired
 };

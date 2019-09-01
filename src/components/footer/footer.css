@@ -5,3 +5,8 @@
   color: #292733;
   padding-left: 15px;
 }
+@media (max-width: 500px) {
+  .footer {
+    display: none;
+  }
+}

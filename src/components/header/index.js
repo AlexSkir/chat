@@ -17,7 +17,6 @@ class Header extends React.Component {
       name: '',
       active: false,
       isLoggedIn: false,
-      redirected: false,
       error: false
     };
   }
@@ -56,13 +55,9 @@ class Header extends React.Component {
     this.setState({ active: true });
   }
 
-  joinChatOnClick() {
-    this.setState({ redirected: true });
-  }
-
   logOutOnClick() {
     store.dispatch({ type: 'login', value: 'Guest' });
-    this.setState({ isLoggedIn: false, redirected: false });
+    this.setState({ isLoggedIn: false });
   }
 
   accountButton() {
@@ -71,19 +66,11 @@ class Header extends React.Component {
         <Account
           name={this.state.name}
           editNameHandler={() => this.editNameonClick()}
-          joinChatHandler={() => this.joinChatOnClick()}
           logOutHandler={() => this.logOutOnClick()}
         />
       );
     }
     return <LoginButton showInputOnClick={() => this.showInput()} />;
-  }
-
-  isRedirected() {
-    if (this.state.redirected) {
-      return <Redirect to="/chat" />;
-    }
-    return <Redirect to="/" />;
   }
 
   render() {
@@ -98,7 +85,6 @@ class Header extends React.Component {
           Input name (max 20 symbols)
         </span>
         {this.input()}
-        {this.isRedirected()}
       </div>
     );
   }

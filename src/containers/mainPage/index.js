@@ -6,17 +6,8 @@ class MainPage extends React.Component {
   constructor() {
     super();
     this.state = {
-      authed: false,
-      active: false
+      authed: false
     };
-  }
-
-  onMouseEnterHandler() {
-    this.setState({ active: true });
-  }
-
-  onMouseLeaveHandler() {
-    this.setState({ active: false });
   }
 
   onClickHandler(e) {
@@ -29,11 +20,7 @@ class MainPage extends React.Component {
     return (
       <div className="row justify-content-center align-items-center mainPage">
         <Link to="/chat" onClick={e => this.onClickHandler(e)}>
-          <div
-            className="smile-text text-monospace text-uppercase"
-            onMouseEnter={e => this.onMouseEnterHandler(e)}
-            onMouseLeave={e => this.onMouseLeaveHandler(e)}
-          >
+          <div className="smile-text text-monospace text-uppercase">
             <div className="circle" />
             <div className="circle-blink">
               <div className="shadow" />

@@ -1,0 +1,112 @@
+.chat-page {
+  width: 80%;
+  height: 100%;
+  overflow: hidden;
+  justify-self: center;
+}
+.chat-page-messages {
+  width: 100%;
+  height: 80%;
+  overflow-y: scroll;
+  background: #e7f2ff;
+  border: 1px solid #838fbe;
+}
+.chat-page-form {
+  width: 100%;
+  height: 80px;
+  background: #e7f2ff;
+  border: 2px solid #838fbe;
+}
+.chat-page-item {
+  width: 100%;
+  padding-left: 30px;
+}
+.emoji-button {
+  color: #454153;
+}
+.emoji-button:hover {
+  color: #292733;
+  cursor: pointer;
+}
+img.emojione {
+  width: 30px;
+  cursor: pointer;
+}
+.emoji-row>.emoji {
+  width: 30px!important;
+  height: 30px!important;
+  padding: 0!important;
+}
+.input-area {
+  width: 100%;
+  height: 50px;
+}
+.connect-status {
+  position: absolute;
+  top: 50px;
+  right: 17px;
+}
+.input-text-area {
+  width: 87%;
+  height: 100%;
+  border: 1px solid #838fbe;
+  margin-left: 20px;
+}
+.emoji-sizer {
+  display: block;
+  width: 32px;
+  height: 32px;
+  background-size: initial!important;
+}
+.chat-buttons {
+  display: flex;
+}
+.smile-block {
+  position: absolute;
+  bottom: 120px;
+  right: 10%;
+}
+.emoji-block {
+  margin-left: -30px;
+}
+.send-button {
+  margin-right: -26px!important;
+}
+.media-selector {
+  margin-left: -30px;
+  margin-right: -20px;
+}
+
+@media (max-width: 800px) {
+  .chat-page {
+    width: 90%;
+  }
+  .smile-block {
+    right: 5%;
+  }
+  .chat-buttons {
+    margin-right: -40px;
+  }
+}
+@media (max-width: 500px) {
+  .input-text-area {
+    width: 78%;
+    margin-left: 18px;
+    margin-right: 0px;
+  }
+  .chat-page {
+    width: 100%;
+  }
+  .smile-block {
+    right: 1%;
+  }
+  .media-selector {
+    margin-left: -70px;
+  }
+  .chat-buttons {
+    margin-right: -40px;
+  }
+  .MuiIconButton-root {
+    padding: 5px!important;
+  }
+}

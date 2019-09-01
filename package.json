@@ -7,6 +7,7 @@
     "@material-ui/core": "^4.3.2",
     "@material-ui/icons": "^4.2.1",
     "@material-ui/styles": "^4.3.0",
+    "emojione-picker": "^2.2.2",
     "jquery": "^3.4.1",
     "node-sass": "^4.12.0",
     "prop-types": "^15.7.2",
@@ -18,7 +19,8 @@
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
     "redux": "^4.0.1",
-    "sass-loader": "^7.2.0"
+    "sass-loader": "^7.2.0",
+    "ws": "^7.1.2"
   },
   "scripts": {
     "lint": "eslint ./src/**/*.js",
