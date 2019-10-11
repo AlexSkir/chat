@@ -1,4 +1,6 @@
+/* eslint-disable no-cond-assign */
 /* eslint-disable no-bitwise */
+import $ from 'jquery';
 
 export function makeRandomId() {
   const j = [];
@@ -10,13 +12,13 @@ export function makeRandomId() {
   return j.join('');
 }
 
-export function getDate() {
-  const data = new Date();
+export function getDate(time) {
+  const data = new Date(time);
   let day = data.getDate();
   if (day < 10) {
     day = `0${day}`;
   }
-  let month = data.getMonth();
+  let month = data.getMonth() + 1;
   if (month < 10) {
     month = `0${month}`;
   }
@@ -32,7 +34,8 @@ export function getDate() {
 }
 
 export function makeSRC(code) {
-  return `https://firebasestorage.googleapis.com/v0/b/awesome-chat-emoji.appspot.com/o/${code}.png?alt=media`;
+  return `/smiles/${code}.png`;
+  // return `https://firebasestorage.googleapis.com/v0/b/awesome-chat-emoji.appspot.com/o/${code}.png?alt=media`;
 }
 
 export function findSmile(text) {
@@ -68,5 +71,67 @@ export function replaceSmileWithUnicode(text) {
     const str = replaced.replace('&nbsp;', ' ');
     replaced = str;
   }
+  while (replaced.indexOf('<br>') !== -1) {
+    const str = replaced.replace('<br>', '').replace('</br>', '');
+    replaced = str;
+  }
+  while (replaced.indexOf('<span') !== -1) {
+    const str = replaced.replace('<span style="font-size: 1rem;">', '').replace('</span>', '');
+    replaced = str;
+  }
+  while (replaced.indexOf('/smiles/') !== -1) {
+    const str = replaced
+      .replace('<img width="32" height="32" src="/smiles/', ':')
+      .replace('.png">', ':');
+    replaced = str;
+  }
+
   return replaced;
+}
+
+function pasteHtmlAtCaret(html) {
+  let sel;
+  let range;
+  if (window.getSelection) {
+    // IE9 and non-IE
+    sel = window.getSelection();
+    if (sel.getRangeAt && sel.rangeCount) {
+      range = sel.getRangeAt(0);
+      range.deleteContents();
+
+      // Range.createContextualFragment() would be useful here but is
+      // non-standard and not supported in all browsers (IE9, for one)
+      const el = document.createElement('div');
+      el.innerHTML = html;
+      const frag = document.createDocumentFragment();
+      let node;
+      let lastNode;
+      lastNode = frag.appendChild(html);
+      // while ((node = el.firstChild)) {
+      //   lastNode = frag.appendChild(node);
+      // }
+      range.insertNode(frag);
+
+      // Preserve the selection
+      if (lastNode) {
+        range = range.cloneRange();
+        range.setStartAfter(html);
+        range.collapse(true);
+        sel.removeAllRanges();
+        sel.addRange(range);
+      }
+    }
+  } else if (document.selection && document.selection.type !== 'Control') {
+    // IE < 9
+    document.selection.createRange().pasteHTML(html);
+  }
+}
+
+export function makeEmojiFromUnicode(event) {
+  const img = new Image(32, 32);
+  img.src = makeSRC(event.unicode);
+  const html = `<img width="32" height="32" src=${makeSRC(event.unicode)}>`;
+  // const html = `${img}`
+  $('#inputChat').focus();
+  pasteHtmlAtCaret(img);
 }

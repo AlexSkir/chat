@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom';
-import Header from 'components/header';
-import MainPage from 'containers/mainPage';
+import Header from 'components/header/header';
+import MainPage from 'containers/mainPage/mainPage';
 import Footer from 'components/footer';
 import Chat from 'containers/chatPage/chatPage';
 

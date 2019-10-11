@@ -1,3 +1,4 @@
+@import '../../variables.scss';
 @for $i from 1 through 100 {
   .char#{$i} { 
     transform: (rotate(65-($i*6)+deg));
@@ -21,7 +22,7 @@ span[class^="char"] {
   width: 20px;
   height: 220px;
   transform-origin: top center;
-  color: rgb(41, 39, 51);
+  color: $secondary-dark;
 }
 
 .circle, .circle-blink {
@@ -29,12 +30,12 @@ span[class^="char"] {
   height: 60px;
   margin: 20px;
   border-radius: 50%;
-  background: rgb(41, 39, 51);
+  background: $secondary-dark;
   z-index: 10;
 }
 .blinked {
   border-radius: 50%;
-  background: rgb(41, 39, 51);
+  background: $secondary-dark;
 }
 .smile-click {
   position: absolute;
@@ -42,7 +43,7 @@ span[class^="char"] {
   left: 233px;
   width: 60px;
   height: 80px;
-  border: 1px solid #292733;
+  border: 1px solid $secondary-dark;
   border-radius: 30%;
   transform: rotate(-50deg);
 }
@@ -54,31 +55,31 @@ span[class^="char"] {
 .smile-text:hover {
   cursor: pointer;
   .circle-blink {
-    background: rgb(250, 214, 148);
+    background: $golden-main;
   }
   .blinked {
     width: 60px;
     height: 20px;
-    background: #292733;
+    background: $secondary-dark;
   }
   .shadow {
     position: relative;
     top: 30px;
     width: 60px;
     height: 20px;
-    background: rgb(250, 214, 148);
+    background: $golden-main;
     border-radius: 50%;
     box-shadow: none!important;
   }
   span[class^="char"] {
-    background: linear-gradient(transparent 83%, #292733 93%);
-    color: rgb(250, 214, 148);
+    background: linear-gradient(transparent 83%, $secondary-dark 93%);
+    color: $golden-main;
   }
 }
 .smile-text:active {
   span[class^="char"] {
     background: linear-gradient(transparent 83%, black 93%);
-    color: rgb(250, 214, 148);
+    color: $golden-main;
   }
   .circle, .blinked {
     background: black;

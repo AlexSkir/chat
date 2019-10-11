@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-import theme from 'theme/theme';
 import Icon from '@material-ui/core/Icon';
+import theme from 'theme/theme';
 
 const CssTextField = withStyles({
   root: {
@@ -63,7 +63,8 @@ export default function LoginInput(props) {
       style={{
         position: 'absolute',
         right: '13px',
-        top: '47px'
+        top: '47px',
+        zIndex: 10
       }}
     >
       <CssTextField

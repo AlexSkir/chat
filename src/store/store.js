@@ -2,8 +2,13 @@ import { createStore } from 'redux';
 
 const initialState = {
   login: localStorage.getItem('login') || 'Guest',
-  city: ''
+  messages: ['loading'],
+  activeInput: false,
+  status: 3
 };
+
+let mesAll = [];
+let newMessage;
 
 function appState(state = initialState, action) {
   switch (action.type) {
@@ -12,9 +17,36 @@ function appState(state = initialState, action) {
       return Object.assign({}, state, {
         login: action.value
       });
-    case 'city':
+    case 'messages':
+      if (mesAll.length === 0) {
+        mesAll = action.value;
+      } else {
+        mesAll.map(item => {
+          if (
+            item.id &&
+            mesAll.every(allitems => allitems.id !== action.value[0].id)
+          ) {
+            newMessage = action.value[0];
+            mesAll.push(newMessage);
+            mesAll.slice(0, 100);
+          } else if (!item.id) {
+            console.log(item);
+          }
+        });
+        return Object.assign({}, state, {
+          messages: [...mesAll]
+        });
+      }
       return Object.assign({}, state, {
-        city: action.value
+        messages: mesAll
+      });
+    case 'activeInput':
+      return Object.assign({}, state, {
+        activeInput: action.value
+      });
+    case 'status':
+      return Object.assign({}, state, {
+        status: action.value
       });
     default:
       return state;
