@@ -12,9 +12,15 @@ class Notifications extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      ignore: true,
       title: ''
     };
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ ignore: this.props.switch ? false : true });
+    }, 100);
+
   }
 
   componentWillReceiveProps() {
@@ -24,22 +30,34 @@ class Notifications extends React.Component {
       if (prop !== oldMes || oldMes === 'undefined') {
         this.setState({ newProp: prop })
         localStorage.setItem('newMes', prop)
-        $('#notif').click();
+        if (this.state.ignore === false) {
+          $('#notif').click();
+        }
+      }
+    }, 200);
+    setTimeout(() => {
+      if (this.props.switch !== undefined) {
+        this.setState({ ignore: this.props.switch ? false : true });
       }
     }, 200);
   }
 
   handlePermissionGranted() {
-    console.log('Permission Granted');
-    this.setState({
-      ignore: false
-    });
+    if (this.props.switch === true) {
+      console.log('Permission Granted');
+      this.setState({
+        ignore: false
+      });
+    }
   }
+
   handlePermissionDenied() {
-    console.log('Permission Denied');
-    this.setState({
-      ignore: true
-    });
+    if (this.props.switch === false) {
+      console.log('Permission Denied');
+      this.setState({
+        ignore: true
+      });
+    }
   }
   handleNotSupported() {
     console.log('Web Notification not Supported');
@@ -73,7 +91,6 @@ class Notifications extends React.Component {
     if (this.state.ignore) {
       return;
     }
-    console.log('clicked')
     const now = Date.now();
 
     const title = `New message at Awesome Chat ${now}`;
@@ -129,8 +146,9 @@ class Notifications extends React.Component {
 };
 
 Notifications.propTypes = {
-  newMessage: PropTypes.string.isRequired
+  newMessage: PropTypes.string.isRequired,
+  switch: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]).isRequired
 };
 
-const mapStateToProps = state => ({ newMessage: state.newMessage });
+const mapStateToProps = state => ({ newMessage: state.newMessage, switch: state.switch });
 export default connect(mapStateToProps)(Notifications);

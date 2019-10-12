@@ -14,7 +14,7 @@ import SmileChatItem from 'components/chatItems/smileChatItem';
 import ChatInput from 'components/ChatInput/ChatInput';
 import connectSocket from 'components/functions/mySocket';
 import Notifications from 'components/Notifications/notification';
-import sound from 'assets/sound.mp3';
+import Switcher from 'components/buttons/switcher';
 
 //const ws = connectSocket();
 class Chat extends Component {
@@ -65,6 +65,9 @@ class Chat extends Component {
         onKeyPress={undefined}
         tabIndex="-1"
       >
+        <div className="switcher">
+          <Switcher ignore={this.props.switch} />
+        </div>
         <div className="row chat-page-messages">
           <div id="messages-area" className="messages-wrapper">
             {this.props.messages.map(item => {
@@ -84,7 +87,6 @@ class Chat extends Component {
           }
         }
         } />
-        <audio className="sound" src={sound}></audio>
         <Notifications />
       </div>
     );
@@ -93,8 +95,9 @@ class Chat extends Component {
 
 Chat.propTypes = {
   status: PropTypes.number.isRequired,
-  messages: PropTypes.array.isRequired
+  messages: PropTypes.array.isRequired,
+  switch: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]).isRequired
 };
 
-const mapStateToProps = state => ({ status: state.status, messages: state.messages });
+const mapStateToProps = state => ({ status: state.status, messages: state.messages, switch: state.switch });
 export default connect(mapStateToProps)(Chat);

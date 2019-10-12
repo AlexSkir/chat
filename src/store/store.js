@@ -5,7 +5,8 @@ const initialState = {
   messages: ['loading'],
   activeInput: false,
   status: 3,
-  newMessage: localStorage.getItem('newMes') || 'new message!'
+  newMessage: localStorage.getItem('newMes') || 'new message!',
+  switch: JSON.parse(localStorage.getItem('switch')) === undefined ? false : JSON.parse(localStorage.getItem('switch'))
 };
 
 let mesAll = [];
@@ -17,6 +18,11 @@ function appState(state = initialState, action) {
       localStorage.setItem('login', action.value);
       return Object.assign({}, state, {
         login: action.value
+      });
+    case 'switch':
+      localStorage.setItem('switch', action.value);
+      return Object.assign({}, state, {
+        switch: action.value
       });
     case 'newMessage':
       return Object.assign({}, state, {
