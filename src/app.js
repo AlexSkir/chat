@@ -18,16 +18,6 @@ export default class App extends Component {
           <Header />
           <Route path="/" exact component={MainPage} />
           <Route path="/chat" component={Chat} />
-          {/* <Route
-            path="/commonpage"
-            render={props => <CommonPage onButtonClick={this.onButtonClick} />}
-            exact
-          />
-          <Route
-            path="/personalpage"
-            render={props => <PersonalPage person={this.state.person} />}
-            exact
-          /> */}
           <Footer />
         </div>
       </Router>
