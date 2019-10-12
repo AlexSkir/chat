@@ -12,7 +12,8 @@ class Notifications extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: ''
+      title: '',
+      activeWindow: true
     };
   }
 
@@ -20,7 +21,12 @@ class Notifications extends React.Component {
     setTimeout(() => {
       this.setState({ ignore: this.props.switch ? false : true });
     }, 100);
-
+    $(window).blur(() => {
+      this.setState({ activeWindow: false });
+    })
+    $(window).focus(() => {
+      this.setState({ activeWindow: true });
+    })
   }
 
   componentWillReceiveProps() {
@@ -123,7 +129,7 @@ class Notifications extends React.Component {
         <button id="notif" style={{ display: 'none' }} onClick={this.handleButtonClick.bind(this)}>Notif!</button>
         {document.title === 'swExample' && <button onClick={this.handleButtonClick2.bind(this)}>swRegistration.getNotifications</button>}
         <Notification
-          ignore={this.state.ignore && this.state.title !== ''}
+          ignore={(this.state.ignore && this.state.activeWindow) || this.state.activeWindow}
           notSupported={this.handleNotSupported.bind(this)}
           onPermissionGranted={this.handlePermissionGranted.bind(this)}
           onPermissionDenied={this.handlePermissionDenied.bind(this)}
@@ -131,7 +137,7 @@ class Notifications extends React.Component {
           onClick={this.handleNotificationOnClick.bind(this)}
           onClose={this.handleNotificationOnClose.bind(this)}
           onError={this.handleNotificationOnError.bind(this)}
-          timeout={3000}
+          timeout={2000}
           title={this.state.title}
           options={this.state.options}
           swRegistration={this.props.swRegistration}
