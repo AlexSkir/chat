@@ -85,14 +85,14 @@ class Notifications extends React.Component {
   }
 
   handleNotificationOnShow(e, tag) {
-    this.playSound();
+    setTimeout(() => {
+      this.playSound();
+    }, 200);
     //console.log(e, 'Notification shown tag:' + tag);
   }
 
   playSound() {
-    setTimeout(() => {
-      $('#sound').trigger('play');
-    }, 200);
+    $('#sound').trigger('play');
   }
 
   handleButtonClick() {
