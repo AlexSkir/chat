@@ -2,7 +2,7 @@ import { createStore } from 'redux';
 
 let switchOption;
 
-if (JSON.parse(localStorage.getItem('switch')) === 'undefined' || 'null') {
+if (JSON.parse(localStorage.getItem('switch')) === undefined || JSON.parse(localStorage.getItem('switch')) === null) {
   switchOption = true;
   localStorage.setItem('switch', true);
 } else {
