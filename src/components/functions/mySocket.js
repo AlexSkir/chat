@@ -2,7 +2,8 @@ import BrowserWebSocket from 'browser-websocket';
 import store from 'store/store';
 
 export default function connectSocket() {
-  const ws = new BrowserWebSocket('https://st-chat.shas.tel');
+  // const ws = new BrowserWebSocket('ws://st-chat.shas.tel');
+  const ws = new BrowserWebSocket('wss://wssproxy.herokuapp.com/');
   ws.on('open', () => {
     setTimeout(() => {
       console.log('open', ws.ws.readyState);
