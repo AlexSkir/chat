@@ -87,7 +87,7 @@ class Notifications extends React.Component {
   handleNotificationOnShow(e, tag) {
     setTimeout(() => {
       this.playSound();
-    }, 300);
+    }, 500);
     //console.log(e, 'Notification shown tag:' + tag);
   }
 
