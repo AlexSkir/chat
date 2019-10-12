@@ -92,7 +92,7 @@ class Notifications extends React.Component {
   playSound() {
     setTimeout(() => {
       $('#sound').trigger('play');
-    }, 200);
+    }, 100);
   }
 
   handleButtonClick() {
