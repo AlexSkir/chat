@@ -1,12 +1,21 @@
 import { createStore } from 'redux';
 
+let switchOption;
+
+if (JSON.parse(localStorage.getItem('switch')) === 'undefined' || 'null') {
+  switchOption = true;
+  localStorage.setItem('switch', true);
+} else {
+  switchOption = JSON.parse(localStorage.getItem('switch'))
+}
+
 const initialState = {
   login: localStorage.getItem('login') || 'Guest',
   messages: ['loading'],
   activeInput: false,
   status: 3,
   newMessage: localStorage.getItem('newMes') || 'new message!',
-  switch: JSON.parse(localStorage.getItem('switch')) === undefined || 'null' ? true : JSON.parse(localStorage.getItem('switch'))
+  switch: switchOption
 };
 
 let mesAll = [];
