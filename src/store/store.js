@@ -6,7 +6,7 @@ const initialState = {
   activeInput: false,
   status: 3,
   newMessage: localStorage.getItem('newMes') || 'new message!',
-  switch: JSON.parse(localStorage.getItem('switch')) === undefined ? false : JSON.parse(localStorage.getItem('switch'))
+  switch: JSON.parse(localStorage.getItem('switch')) === undefined || 'null' ? true : JSON.parse(localStorage.getItem('switch'))
 };
 
 let mesAll = [];
