@@ -1,17 +1,18 @@
+@import '../../variables.scss';
 .chat-page-form {
   width: 100%;
   height: 80px;
   margin-top: -15px;
   background: #ffffd6;
-  border: 2px solid #292733;
+  border: 2px solid $secondary-dark;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
 .emoji-button {
-  color: #454153;
+  color: $secondary-main;
 }
 .emoji-button:hover {
-  color: #292733;
+  color: $secondary-dark;
   cursor: pointer;
 }
 img.emojione {
@@ -32,7 +33,7 @@ img.emojione {
   height: 100%;
   margin-left: 20px;
   padding: 10px 40px 10px 10px;
-  border: 1px solid #292733;
+  border: 1px solid $secondary-dark;
   border-radius: 4px;
   overflow-y: auto;
   word-break: break-all;

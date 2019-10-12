@@ -16,6 +16,10 @@ export default function connectSocket() {
   })
   ws.on('message', event => {
     const mes = JSON.parse(event.data).splice(0, 100).reverse();
+    if (mes.length === 1) {
+      const newMes = `${mes[0].from}: ${mes[0].message}`;
+      store.dispatch({ type: 'newMessage', value: newMes });
+    }
     store.dispatch({ type: 'messages', value: mes });
     const div = document.getElementById('messages-area');
     setTimeout(() => {

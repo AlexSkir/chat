@@ -4,7 +4,7 @@ import $ from 'jquery';
 import EmojiPicker from 'emojione-picker';
 import 'emojione-picker/css/picker.css';
 import { makeEmojiFromUnicode } from 'components/functions';
-import 'components/ChatInput/chatInput.css';
+import 'components/ChatInput/chatInput.scss';
 import MyIconButton from 'components/buttons/iconButtons';
 import Icon from '@material-ui/core/Icon';
 

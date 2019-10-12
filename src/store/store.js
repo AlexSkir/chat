@@ -4,7 +4,8 @@ const initialState = {
   login: localStorage.getItem('login') || 'Guest',
   messages: ['loading'],
   activeInput: false,
-  status: 3
+  status: 3,
+  newMessage: localStorage.getItem('newMes') || 'new message!'
 };
 
 let mesAll = [];
@@ -16,6 +17,10 @@ function appState(state = initialState, action) {
       localStorage.setItem('login', action.value);
       return Object.assign({}, state, {
         login: action.value
+      });
+    case 'newMessage':
+      return Object.assign({}, state, {
+        newMessage: action.value
       });
     case 'messages':
       if (mesAll.length === 0) {

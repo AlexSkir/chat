@@ -13,6 +13,8 @@ import TextChatItem from 'components/chatItems/textChatItem';
 import SmileChatItem from 'components/chatItems/smileChatItem';
 import ChatInput from 'components/ChatInput/ChatInput';
 import connectSocket from 'components/functions/mySocket';
+import Notifications from 'components/Notifications/notification';
+import sound from 'assets/sound.mp3';
 
 //const ws = connectSocket();
 class Chat extends Component {
@@ -82,6 +84,8 @@ class Chat extends Component {
           }
         }
         } />
+        <audio className="sound" src={sound}></audio>
+        <Notifications />
       </div>
     );
   }

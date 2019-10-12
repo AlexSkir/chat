@@ -6,6 +6,8 @@
   },
   "include": [
     "src",
-    "src/theme"
+    "src/theme",
+    "firebase-messaging-sw.js",
+    "firebase_subscribe.js"
   ]
 }
