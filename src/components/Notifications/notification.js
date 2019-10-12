@@ -1,7 +1,6 @@
 import React from 'react';
 import Notification from 'react-web-notification';
 import $ from 'jquery';
-import sound from 'assets/sound.mp3';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -109,7 +108,7 @@ class Notifications extends React.Component {
       icon: icon,
       lang: 'en',
       dir: 'ltr',
-      sound: sound
+      sound: '/sound.mp3'
     }
     this.setState({
       title: title,
@@ -143,8 +142,8 @@ class Notifications extends React.Component {
           swRegistration={this.props.swRegistration}
         />
         <audio id='sound' preload='auto'>
-          <source src={sound} type='audio/mpeg' />
-          <embed hidden={true} autostart='false' loop={false} src={sound} />
+          <source src="/sound.mp3" type='audio/mpeg' />
+          <embed hidden={true} autostart='false' loop={false} src="/sound.mp3" />
         </audio>
       </div>
     )
