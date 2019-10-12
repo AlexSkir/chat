@@ -75,6 +75,12 @@
   width: 4px;
 }
 
+.status-block {
+  position: absolute;
+  top: 50px;
+  right: 25px;
+}
+
 @media (max-width: 800px) {
   .chat-page {
     width: 90%;

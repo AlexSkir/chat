@@ -15,6 +15,7 @@ import ChatInput from 'components/ChatInput/ChatInput';
 import connectSocket from 'components/functions/mySocket';
 import Notifications from 'components/Notifications/notification';
 import Switcher from 'components/buttons/switcher';
+import Status from 'components/wsStatus/wsStatus';
 
 //const ws = connectSocket();
 class Chat extends Component {
@@ -67,6 +68,7 @@ class Chat extends Component {
       >
         <div className="switcher">
           <Switcher ignore={this.props.switch} />
+          <Status status={this.props.status} />
         </div>
         <div className="row chat-page-messages">
           <div id="messages-area" className="messages-wrapper">
@@ -80,7 +82,6 @@ class Chat extends Component {
             })}
           </div>
         </div>
-        <span className="connect-status">{this.props.status}</span>
         <ChatInput submitClickHandler={() => {
           if (this.props.status === 1) {
             this.submitClickHandler();
