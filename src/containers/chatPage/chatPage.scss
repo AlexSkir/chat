@@ -75,10 +75,10 @@
   width: 4px;
 }
 
-.status-block {
-  position: absolute;
-  top: 50px;
-  right: 25px;
+.switcher {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
 
 @media (max-width: 800px) {
@@ -89,6 +89,9 @@
 @media (max-width: 500px) {
   .chat-page {
     width: 95%;
+  }
+  .chat-page-messages {
+    height: 60%;
   }
   .chat-page-messages:before {
     width: 91%;
@@ -102,7 +105,7 @@
     bottom: 0;
   }
   .chat-page-messages {
-    height: 75%;
+    height: 60%;
   }
   .chat-page-messages:before {
     width: 95%;
