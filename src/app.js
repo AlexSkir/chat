@@ -8,6 +8,7 @@ import Footer from 'components/footer';
 import Chat from 'containers/chatPage/chatPage';
 import store from 'store/store';
 import $ from 'jquery';
+import Notifications from 'components/Notifications/notif';
 
 class App extends Component {
   constructor() {
@@ -20,11 +21,8 @@ class App extends Component {
       <Router>
         <div className="container-fluid" onClick={(e) => {
           const input = $('#changeNameInput');
-          console.log($(e.target))
           if ($(e.target).is('.container-fluid') || $(e.target).is('.header')) {
-            console.log('yep its contairner')
             if (input) {
-              console.log('input is here')
               store.dispatch({ type: 'activeInput', value: false });
             }
           }
@@ -39,6 +37,7 @@ class App extends Component {
           <Route path="/" exact component={MainPage} />
           <Route path="/chat" component={Chat} />
           <Footer />
+          <Notifications />
         </div>
       </Router>
     );

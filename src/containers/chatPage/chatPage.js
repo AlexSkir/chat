@@ -13,7 +13,6 @@ import TextChatItem from 'components/chatItems/textChatItem';
 import SmileChatItem from 'components/chatItems/smileChatItem';
 import ChatInput from 'components/ChatInput/ChatInput';
 import connectSocket from 'components/functions/mySocket';
-import Notifications from 'components/Notifications/notif';
 import Switcher from 'components/buttons/switcher';
 import Status from 'components/wsStatus/wsStatus';
 
@@ -38,7 +37,9 @@ class Chat extends Component {
     this.mounted = true;
     const div = document.getElementById('messages-area');
     setTimeout(() => {
-      div.scrollTo({ top: div.scrollHeight - div.clientHeight, behavior: 'instant' });
+      if (div) {
+        div.scrollTo({ top: div.scrollHeight - div.clientHeight, behavior: 'instant' });
+      }
     }, 1500);
   }
 
@@ -88,7 +89,6 @@ class Chat extends Component {
           }
         }
         } />
-        <Notifications />
       </div>
     );
   }

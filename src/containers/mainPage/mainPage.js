@@ -25,6 +25,9 @@ class MainPage extends React.Component {
         this.setState({ inputActive: false })
         e.preventDefault();
       }
+    } else {
+      store.dispatch({ type: 'activeInput', value: false });
+      store.dispatch({ type: 'redirect', value: true });
     }
   }
 

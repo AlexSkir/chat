@@ -84,6 +84,7 @@ class Notifications extends Component {
           event.preventDefault();
           window.focus();
           this.notification.close();
+          store.dispatch({ type: 'redirect', value: true });
         };
         setTimeout(() => {
           this.notification.close();
