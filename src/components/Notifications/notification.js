@@ -1,5 +1,6 @@
 import React from 'react';
-import Notification from 'components/functions/react-web-notification/src/components/Notification';
+// import Notification from 'components/functions/react-web-notification/src/components/Notification';
+import Notification from 'react-web-notification';
 import $ from 'jquery';
 import sound from 'assets/sound.mp3';
 import { connect } from 'react-redux';
