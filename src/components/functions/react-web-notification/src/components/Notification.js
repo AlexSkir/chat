@@ -102,7 +102,7 @@ class Notification extends React.Component {
       this.props.swRegistration.showNotification(this.props.title, opt)
       this.notifications[opt.tag] = {};
     } else {
-      const n = Notification.requestPermission(function (result) {
+      const n = window.Notification.requestPermission(function (result) {
                 if (result === 'granted') {
                   console.log('node modules permission granted')
                   navigator.serviceWorker.ready.then(function (registration) {
