@@ -18,7 +18,6 @@
     "react-redux": "^7.1.0",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
-    "react-web-notification": "^0.7.0",
     "redux": "^4.0.1",
     "sass-loader": "^7.2.0",
     "ws": "^7.1.2",

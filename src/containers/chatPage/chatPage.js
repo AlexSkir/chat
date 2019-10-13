@@ -13,7 +13,7 @@ import TextChatItem from 'components/chatItems/textChatItem';
 import SmileChatItem from 'components/chatItems/smileChatItem';
 import ChatInput from 'components/ChatInput/ChatInput';
 import connectSocket from 'components/functions/mySocket';
-import Notifications from 'components/Notifications/notification';
+import Notifications from 'components/Notifications/notif';
 import Switcher from 'components/buttons/switcher';
 import Status from 'components/wsStatus/wsStatus';
 
