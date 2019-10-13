@@ -2,6 +2,7 @@
   display: grid;
   grid-template-rows: 50px 1fr 50px;
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   background: #fad694;
 }
 .large-screen-bg {
