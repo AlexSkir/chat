@@ -1,4 +1,5 @@
 import React from 'react';
+import $ from 'jquery';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -8,12 +9,22 @@ import store from 'store/store';
 class MainPage extends React.Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      inputActive: false
+    };
   }
 
   onClickHandler(e) {
     if (this.props.login === 'Guest') {
-      e.preventDefault();
+      if (this.state.inputActive === false) {
+        store.dispatch({ type: 'activeInput', value: true });
+        this.setState({ inputActive: true })
+        e.preventDefault();
+      } else {
+        store.dispatch({ type: 'activeInput', value: false });
+        this.setState({ inputActive: false })
+        e.preventDefault();
+      }
     }
   }
 
@@ -21,7 +32,7 @@ class MainPage extends React.Component {
     return (
       <div
         className="row justify-content-center align-items-center mainPage"
-        onClick={() => store.dispatch({ type: 'activeInput', value: false })}
+        onClick={() => this.state.inputActive ? store.dispatch({ type: 'activeInput', value: false }) : null}
         role="button"
         onKeyPress={undefined}
         tabIndex="-1"

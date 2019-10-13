@@ -14,6 +14,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import theme from 'theme/theme';
 import 'components/account/account.scss';
+import store from 'store/store';
 
 const StyledMenu = withStyles({
   paper: {
@@ -40,7 +41,6 @@ const StyledMenu = withStyles({
 const StyledMenuItem = withStyles(() => ({
   root: {
     '&:focus': {
-      backgroundColor: theme.palette.primary.dark,
       '& .MuiListItemIcon-root, & .MuiListItemText-primary': {
         color: theme.palette.primary.contrastText
       }
@@ -85,6 +85,7 @@ export default function Account(props) {
               setAnchorEl(null);
               props.editNameHandler();
             }}
+          // onBlur={() => store.dispatch({ type: 'activeInput', value: false })}
           >
             <ListItemIcon>
               <EditIcon />
@@ -94,6 +95,7 @@ export default function Account(props) {
           <StyledMenuItem
             onClick={() => {
               setAnchorEl(null);
+              store.dispatch({ type: 'redirect', value: true })
             }}
           >
             <ListItemIcon>

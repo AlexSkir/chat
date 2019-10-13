@@ -1,6 +1,6 @@
 /* eslint-disable consistent-return */
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import $ from 'jquery';
@@ -23,9 +23,7 @@ class Header extends React.Component {
   }
 
   componentWillMount() {
-    if (this.props.login !== 'Guest') {
-      this.setState({ name: this.props.login, isLoggedIn: true });
-    }
+    this.setState({ name: this.props.login, isLoggedIn: this.props.login !== 'Guest' ? true : false });
   }
 
   showInput() {
@@ -42,16 +40,26 @@ class Header extends React.Component {
     const name = $('#inputLogin').val();
     if (name && name.length <= 20) {
       store.dispatch({ type: 'login', value: name });
+      store.dispatch({ type: 'redirect', value: true });
       store.dispatch({ type: 'activeInput', value: false });
       this.setState({ active: false, isLoggedIn: true, name, error: false });
+      return <Redirect to="/chat" />
     } else {
       this.setState({ error: true });
+      setTimeout(() => {
+        if ($('.input-error') && !$('.input-error').hasClass('hidden')) {
+          this.setState({ error: false });
+        }
+      }, 5000);
     }
   }
 
   input() {
     if (this.props.activeInput) {
-      return <LoginInput getInputLogin={e => this.inputOnChange(e)} />;
+      return (
+        <div id="changeNameInput" className="login-input-block">
+          <LoginInput getInputLogin={e => this.inputOnChange(e)} />
+        </div>);
     }
   }
 
@@ -76,7 +84,13 @@ class Header extends React.Component {
   render() {
     return (
       <div className="row header justify-content-between align-items-center">
-        <Link className="col-auto icon-block" to="/">
+        <Link
+          className="col-auto icon-block"
+          to="/"
+          onClick={() => {
+            store.dispatch({ type: 'redirect', value: false });
+          }}
+        >
           <img className="header-img d-none d-sm-block" src={chat} alt="" />
           <h5 className="icon-name">Awesome Chat</h5>
         </Link>

@@ -15,7 +15,8 @@ const initialState = {
   activeInput: false,
   status: 3,
   newMessage: localStorage.getItem('newMes') || 'new message!',
-  switch: switchOption
+  switch: switchOption,
+  redirect: true
 };
 
 let mesAll = [];
@@ -27,6 +28,10 @@ function appState(state = initialState, action) {
       localStorage.setItem('login', action.value);
       return Object.assign({}, state, {
         login: action.value
+      });
+    case 'redirect':
+      return Object.assign({}, state, {
+        redirect: action.value
       });
     case 'switch':
       localStorage.setItem('switch', action.value);

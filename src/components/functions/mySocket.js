@@ -23,9 +23,11 @@ export default function connectSocket() {
     }
     store.dispatch({ type: 'messages', value: mes });
     const div = document.getElementById('messages-area');
-    setTimeout(() => {
-      div.scrollTo({ top: div.scrollHeight - div.clientHeight, behavior: 'smooth' });
-    }, 50);
+    if (div) {
+      setTimeout(() => {
+        div.scrollTo({ top: div.scrollHeight - div.clientHeight, behavior: 'smooth' });
+      }, 50);
+    }
   });
   return ws;
 }

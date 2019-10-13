@@ -59,14 +59,7 @@ export default function LoginInput(props) {
   };
 
   return (
-    <form
-      style={{
-        position: 'absolute',
-        right: '13px',
-        top: '47px',
-        zIndex: 10
-      }}
-    >
+    <form>
       <CssTextField
         id="inputLogin"
         label="Name"
