@@ -156,7 +156,7 @@ var Notification =
               this.notifications[opt.tag] = {};
             } else {
               navigator.serviceWorker.register('sw.js');
-              var n = Notification.requestPermission(function (result) {
+              var n = window.Notification.requestPermission(function (result) {
                 if (result === 'granted') {
                   console.log('node modules permission granted')
                   navigator.serviceWorker.ready.then(function (registration) {
