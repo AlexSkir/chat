@@ -13,7 +13,8 @@ class ChatInput extends Component {
     super();
     this.state = {
       emoji: false,
-      html: ''
+      html: '',
+      attachment: false
     };
     this.mounted = false;
   }
@@ -35,6 +36,14 @@ class ChatInput extends Component {
     this.setState({ emoji: false });
   }
 
+  toggleAttachBlock() {
+    if (this.state.attachment) {
+      this.setState({ attachment: false });
+    } else {
+      this.setState({ attachment: true });
+    }
+  }
+
   handleChange = evt => {
     this.setState({ html: evt.target.value });
   };
@@ -45,10 +54,13 @@ class ChatInput extends Component {
         <div className="input-area row justify-content-center align-items-center">
           <div className="media-selector">
             <MyIconButton
-              onClickHandler={() => console.log('not ready yet')}
+              onClickHandler={() => this.toggleAttachBlock()}
               theme="secondary"
               icon={<Icon>attach_file</Icon>}
             />
+            <div className={`media-selector-info ${this.state.attachment ? '' : 'hidden'}`}>
+              Does not work yet
+            </div>
           </div>
           <span
             id="inputChat"

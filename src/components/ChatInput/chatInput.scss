@@ -70,8 +70,22 @@ img.emojione {
   margin-right: -26px!important;
 }
 .media-selector {
+  position: relative;
   margin-left: -30px;
   margin-right: -20px;
+}
+.media-selector-info {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -60px;
+  left: 7px;
+  width: 150px;
+  height: 50px;
+  z-index: 100;
+  background: $golden-light;
+  border: 2px solid $secondary-main;
 }
 
 @media (max-width: 800px) {

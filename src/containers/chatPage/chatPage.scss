@@ -94,6 +94,13 @@
   .chat-page-messages {
     height: 70%;
   }
+  .switcher .MuiSwitch-switchBase {
+    top: 3px;
+    left: 7px;
+  }
+  .switcher label {
+    margin-bottom: 0;
+  }
 }
 @media (max-width: 400px) {
   .chat-page {

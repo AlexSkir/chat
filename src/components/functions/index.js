@@ -35,7 +35,6 @@ export function getDate(time) {
 
 export function makeSRC(code) {
   return `/smiles/${code}.png`;
-  // return `https://firebasestorage.googleapis.com/v0/b/awesome-chat-emoji.appspot.com/o/${code}.png?alt=media`;
 }
 
 export function findSmile(text) {
@@ -58,15 +57,6 @@ export function findSmile(text) {
 
 export function replaceSmileWithUnicode(text) {
   let replaced = text;
-  while (replaced.indexOf('.png?alt=media">') !== -1) {
-    const str = replaced
-      .replace(
-        '<img width="32" height="32" src="https://firebasestorage.googleapis.com/v0/b/awesome-chat-emoji.appspot.com/o/',
-        ':'
-      )
-      .replace('.png?alt=media">', ':');
-    replaced = str;
-  }
   while (replaced.indexOf('&nbsp;') !== -1) {
     const str = replaced.replace('&nbsp;', ' ');
     replaced = str;
@@ -76,13 +66,18 @@ export function replaceSmileWithUnicode(text) {
     replaced = str;
   }
   while (replaced.indexOf('<span') !== -1) {
-    const str = replaced.replace('<span style="font-size: 1rem;">', '').replace('</span>', '');
+    const str = replaced
+      .replace('<span style="font-size: 1rem;">', '').replace('</span>', '');
     replaced = str;
   }
   while (replaced.indexOf('/smiles/') !== -1) {
     const str = replaced
-      .replace('<img width="32" height="32" src="/smiles/', ':')
-      .replace('.png">', ':');
+      .replace('<img', '')
+      .replace('height="32"', '')
+      .replace('width="32"', '')
+      .replace('src="/smiles/', ':')
+      .replace('.png"', ':')
+      .replace('>', '');
     replaced = str;
   }
 
@@ -93,26 +88,16 @@ function pasteHtmlAtCaret(html) {
   let sel;
   let range;
   if (window.getSelection) {
-    // IE9 and non-IE
     sel = window.getSelection();
     if (sel.getRangeAt && sel.rangeCount) {
       range = sel.getRangeAt(0);
       range.deleteContents();
-
-      // Range.createContextualFragment() would be useful here but is
-      // non-standard and not supported in all browsers (IE9, for one)
       const el = document.createElement('div');
       el.innerHTML = html;
       const frag = document.createDocumentFragment();
-      let node;
       let lastNode;
       lastNode = frag.appendChild(html);
-      // while ((node = el.firstChild)) {
-      //   lastNode = frag.appendChild(node);
-      // }
       range.insertNode(frag);
-
-      // Preserve the selection
       if (lastNode) {
         range = range.cloneRange();
         range.setStartAfter(html);
@@ -122,7 +107,6 @@ function pasteHtmlAtCaret(html) {
       }
     }
   } else if (document.selection && document.selection.type !== 'Control') {
-    // IE < 9
     document.selection.createRange().pasteHTML(html);
   }
 }
@@ -130,8 +114,6 @@ function pasteHtmlAtCaret(html) {
 export function makeEmojiFromUnicode(event) {
   const img = new Image(32, 32);
   img.src = makeSRC(event.unicode);
-  const html = `<img width="32" height="32" src=${makeSRC(event.unicode)}>`;
-  // const html = `${img}`
   $('#inputChat').focus();
   pasteHtmlAtCaret(img);
 }

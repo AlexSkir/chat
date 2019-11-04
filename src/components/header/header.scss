@@ -13,7 +13,7 @@
   background: $primary-main;
 }
 .hidden {
-  display: none;
+  display: none!important;
 }
 .header-img {
   width: 50px;
