@@ -58,11 +58,12 @@ img.emojione {
 }
 .smile-block {
   position: absolute;
-  bottom: 120px;
-  right: 10%;
+  bottom: 40px;
+  right: -43px;
   z-index: 10;
 }
 .emoji-block {
+  position: relative;
   margin-left: -30px;
 }
 .send-button {
@@ -76,9 +77,6 @@ img.emojione {
 @media (max-width: 800px) {
   .chat-page-form {
     margin-bottom: 20px;
-  }
-  .smile-block {
-    right: 5%;
   }
   .input-text-area {
     margin-left: 0px;
@@ -102,7 +100,8 @@ img.emojione {
     margin-right: 0px;
   }
   .smile-block {
-    right: 1%;
+    bottom: 30px;
+    right: -20px;
   }
   .media-selector {
     margin-left: -65px;
