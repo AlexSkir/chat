@@ -1,9 +1,19 @@
 import BrowserWebSocket from 'browser-websocket';
 import store from 'store/store';
+import * as websocket from 'websocket';
 
 export default function connectSocket() {
+  // var WebSocketClient = websocket.client;
+  // var ws = new WebSocketClient();
+  // ws.connect('ws://localhost:3000/', 'echo-protocol');
+  // ws.on('connectFailed', function (error) {
+  //   ws.log('Connect Error: ' + error.toString());
+  // });
   // const ws = new BrowserWebSocket('ws://st-chat.shas.tel');
-  const ws = new BrowserWebSocket('wss://wssproxy.herokuapp.com/');
+  // const ws = new BrowserWebSocket('wss://wssproxy.herokuapp.com/');
+  const ws = new BrowserWebSocket('wss://awesome-chat-ws.herokuapp.com/');
+  // const ws = new BrowserWebSocket('ws://localhost:3000');
+
   ws.on('open', () => {
     setTimeout(() => {
       console.log('open', ws.ws.readyState);
@@ -17,11 +27,15 @@ export default function connectSocket() {
   })
   ws.on('message', event => {
     const mes = JSON.parse(event.data).splice(0, 100).reverse();
+
     if (mes.length === 1) {
+      console.log('received 1 mes')
       const newMes = `${mes[0].from}: ${mes[0].message}`;
       store.dispatch({ type: 'newMessage', value: newMes });
     }
+
     store.dispatch({ type: 'messages', value: mes });
+
     const div = document.getElementById('messages-area');
     if (div) {
       setTimeout(() => {
