@@ -34,7 +34,7 @@ export function getDate(time) {
 }
 
 export function makeSRC(code) {
-  return `/smiles/${code}.png`;
+  return `./smiles/${code}.png`;
 }
 
 export function findSmile(text) {
