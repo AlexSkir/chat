@@ -1,6 +1,6 @@
 {
   "name": "chat",
-  "homepage": "https://github.com/AlexSkir/chat/tree/project",
+  "homepage": "https://github.com/AlexSkir/chat/tree/project/build/",
   "version": "0.1.0",
   "private": false,
   "dependencies": {

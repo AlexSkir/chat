@@ -20,7 +20,6 @@ const initialState = {
 };
 
 let mesAll = [];
-let newMessage;
 
 function appState(state = initialState, action) {
   switch (action.type) {

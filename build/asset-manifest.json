@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/AlexSkir/chat/tree/project/static/css/main.7f6b21f7.chunk.css",
-    "main.js": "/AlexSkir/chat/tree/project/static/js/main.6851ba90.chunk.js",
-    "main.js.map": "/AlexSkir/chat/tree/project/static/js/main.6851ba90.chunk.js.map",
-    "runtime-main.js": "/AlexSkir/chat/tree/project/static/js/runtime-main.ca95e84b.js",
-    "runtime-main.js.map": "/AlexSkir/chat/tree/project/static/js/runtime-main.ca95e84b.js.map",
-    "static/css/2.8ca7cecf.chunk.css": "/AlexSkir/chat/tree/project/static/css/2.8ca7cecf.chunk.css",
-    "static/js/2.50d987a3.chunk.js": "/AlexSkir/chat/tree/project/static/js/2.50d987a3.chunk.js",
-    "static/js/2.50d987a3.chunk.js.map": "/AlexSkir/chat/tree/project/static/js/2.50d987a3.chunk.js.map",
-    "index.html": "/AlexSkir/chat/tree/project/index.html",
-    "precache-manifest.be57ab2e1dc1671df34aceddc17697db.js": "/AlexSkir/chat/tree/project/precache-manifest.be57ab2e1dc1671df34aceddc17697db.js",
-    "service-worker.js": "/AlexSkir/chat/tree/project/service-worker.js",
-    "static/css/2.8ca7cecf.chunk.css.map": "/AlexSkir/chat/tree/project/static/css/2.8ca7cecf.chunk.css.map",
-    "static/css/main.7f6b21f7.chunk.css.map": "/AlexSkir/chat/tree/project/static/css/main.7f6b21f7.chunk.css.map",
-    "static/js/2.50d987a3.chunk.js.LICENSE.txt": "/AlexSkir/chat/tree/project/static/js/2.50d987a3.chunk.js.LICENSE.txt",
-    "static/media/chatPage.scss": "/AlexSkir/chat/tree/project/static/media/BG.baad24af.png",
-    "static/media/sound.mp3": "/AlexSkir/chat/tree/project/static/media/sound.13620510.mp3"
+    "main.css": "/AlexSkir/chat/tree/project/build/static/css/main.157f9d88.chunk.css",
+    "main.js": "/AlexSkir/chat/tree/project/build/static/js/main.21321cd1.chunk.js",
+    "main.js.map": "/AlexSkir/chat/tree/project/build/static/js/main.21321cd1.chunk.js.map",
+    "runtime-main.js": "/AlexSkir/chat/tree/project/build/static/js/runtime-main.858ff4b1.js",
+    "runtime-main.js.map": "/AlexSkir/chat/tree/project/build/static/js/runtime-main.858ff4b1.js.map",
+    "static/css/2.8ca7cecf.chunk.css": "/AlexSkir/chat/tree/project/build/static/css/2.8ca7cecf.chunk.css",
+    "static/js/2.60f1257b.chunk.js": "/AlexSkir/chat/tree/project/build/static/js/2.60f1257b.chunk.js",
+    "static/js/2.60f1257b.chunk.js.map": "/AlexSkir/chat/tree/project/build/static/js/2.60f1257b.chunk.js.map",
+    "index.html": "/AlexSkir/chat/tree/project/build/index.html",
+    "precache-manifest.2cd2862ed8f48b8a28aac327312504c6.js": "/AlexSkir/chat/tree/project/build/precache-manifest.2cd2862ed8f48b8a28aac327312504c6.js",
+    "service-worker.js": "/AlexSkir/chat/tree/project/build/service-worker.js",
+    "static/css/2.8ca7cecf.chunk.css.map": "/AlexSkir/chat/tree/project/build/static/css/2.8ca7cecf.chunk.css.map",
+    "static/css/main.157f9d88.chunk.css.map": "/AlexSkir/chat/tree/project/build/static/css/main.157f9d88.chunk.css.map",
+    "static/js/2.60f1257b.chunk.js.LICENSE.txt": "/AlexSkir/chat/tree/project/build/static/js/2.60f1257b.chunk.js.LICENSE.txt",
+    "static/media/chatPage.scss": "/AlexSkir/chat/tree/project/build/static/media/BG.baad24af.png",
+    "static/media/sound.mp3": "/AlexSkir/chat/tree/project/build/static/media/sound.13620510.mp3"
   },
   "entrypoints": [
-    "static/js/runtime-main.ca95e84b.js",
+    "static/js/runtime-main.858ff4b1.js",
     "static/css/2.8ca7cecf.chunk.css",
-    "static/js/2.50d987a3.chunk.js",
-    "static/css/main.7f6b21f7.chunk.css",
-    "static/js/main.6851ba90.chunk.js"
+    "static/js/2.60f1257b.chunk.js",
+    "static/css/main.157f9d88.chunk.css",
+    "static/js/main.21321cd1.chunk.js"
   ]
 }

@@ -1,14 +1,7 @@
 import BrowserWebSocket from 'browser-websocket';
 import store from 'store/store';
-import * as websocket from 'websocket';
 
 export default function connectSocket() {
-  // var WebSocketClient = websocket.client;
-  // var ws = new WebSocketClient();
-  // ws.connect('ws://localhost:3000/', 'echo-protocol');
-  // ws.on('connectFailed', function (error) {
-  //   ws.log('Connect Error: ' + error.toString());
-  // });
   // const ws = new BrowserWebSocket('ws://st-chat.shas.tel');
   // const ws = new BrowserWebSocket('wss://wssproxy.herokuapp.com/');
   const ws = new BrowserWebSocket('wss://awesome-chat-ws.herokuapp.com/');
