@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/chat/static/css/main.c2fc931b.chunk.css",
-    "main.js": "/chat/static/js/main.1175119b.chunk.js",
-    "main.js.map": "/chat/static/js/main.1175119b.chunk.js.map",
-    "runtime-main.js": "/chat/static/js/runtime-main.4fdc9441.js",
-    "runtime-main.js.map": "/chat/static/js/runtime-main.4fdc9441.js.map",
-    "static/css/2.8ca7cecf.chunk.css": "/chat/static/css/2.8ca7cecf.chunk.css",
-    "static/js/2.50d987a3.chunk.js": "/chat/static/js/2.50d987a3.chunk.js",
-    "static/js/2.50d987a3.chunk.js.map": "/chat/static/js/2.50d987a3.chunk.js.map",
-    "index.html": "/chat/index.html",
-    "precache-manifest.b733908f8348853c4d97aec84b8d1adc.js": "/chat/precache-manifest.b733908f8348853c4d97aec84b8d1adc.js",
-    "service-worker.js": "/chat/service-worker.js",
-    "static/css/2.8ca7cecf.chunk.css.map": "/chat/static/css/2.8ca7cecf.chunk.css.map",
-    "static/css/main.c2fc931b.chunk.css.map": "/chat/static/css/main.c2fc931b.chunk.css.map",
-    "static/js/2.50d987a3.chunk.js.LICENSE.txt": "/chat/static/js/2.50d987a3.chunk.js.LICENSE.txt",
-    "static/media/chatPage.scss": "/chat/static/media/BG.baad24af.png",
-    "static/media/sound.mp3": "/chat/static/media/sound.13620510.mp3"
+    "main.css": "/AlexSkir/chat/tree/project/static/css/main.7f6b21f7.chunk.css",
+    "main.js": "/AlexSkir/chat/tree/project/static/js/main.6851ba90.chunk.js",
+    "main.js.map": "/AlexSkir/chat/tree/project/static/js/main.6851ba90.chunk.js.map",
+    "runtime-main.js": "/AlexSkir/chat/tree/project/static/js/runtime-main.ca95e84b.js",
+    "runtime-main.js.map": "/AlexSkir/chat/tree/project/static/js/runtime-main.ca95e84b.js.map",
+    "static/css/2.8ca7cecf.chunk.css": "/AlexSkir/chat/tree/project/static/css/2.8ca7cecf.chunk.css",
+    "static/js/2.50d987a3.chunk.js": "/AlexSkir/chat/tree/project/static/js/2.50d987a3.chunk.js",
+    "static/js/2.50d987a3.chunk.js.map": "/AlexSkir/chat/tree/project/static/js/2.50d987a3.chunk.js.map",
+    "index.html": "/AlexSkir/chat/tree/project/index.html",
+    "precache-manifest.be57ab2e1dc1671df34aceddc17697db.js": "/AlexSkir/chat/tree/project/precache-manifest.be57ab2e1dc1671df34aceddc17697db.js",
+    "service-worker.js": "/AlexSkir/chat/tree/project/service-worker.js",
+    "static/css/2.8ca7cecf.chunk.css.map": "/AlexSkir/chat/tree/project/static/css/2.8ca7cecf.chunk.css.map",
+    "static/css/main.7f6b21f7.chunk.css.map": "/AlexSkir/chat/tree/project/static/css/main.7f6b21f7.chunk.css.map",
+    "static/js/2.50d987a3.chunk.js.LICENSE.txt": "/AlexSkir/chat/tree/project/static/js/2.50d987a3.chunk.js.LICENSE.txt",
+    "static/media/chatPage.scss": "/AlexSkir/chat/tree/project/static/media/BG.baad24af.png",
+    "static/media/sound.mp3": "/AlexSkir/chat/tree/project/static/media/sound.13620510.mp3"
   },
   "entrypoints": [
-    "static/js/runtime-main.4fdc9441.js",
+    "static/js/runtime-main.ca95e84b.js",
     "static/css/2.8ca7cecf.chunk.css",
     "static/js/2.50d987a3.chunk.js",
-    "static/css/main.c2fc931b.chunk.css",
-    "static/js/main.1175119b.chunk.js"
+    "static/css/main.7f6b21f7.chunk.css",
+    "static/js/main.6851ba90.chunk.js"
   ]
 }
