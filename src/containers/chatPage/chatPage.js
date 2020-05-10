@@ -16,7 +16,6 @@ import connectSocket from 'components/functions/mySocket';
 import Switcher from 'components/buttons/switcher';
 import Status from 'components/wsStatus/wsStatus';
 
-//const ws = connectSocket();
 class Chat extends Component {
   constructor() {
     super();
