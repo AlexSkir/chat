@@ -70,12 +70,12 @@ export function replaceSmileWithUnicode(text) {
       .replace('<span style="font-size: 1rem;">', '').replace('</span>', '');
     replaced = str;
   }
-  while (replaced.indexOf('/smiles/') !== -1) {
+  while (replaced.indexOf('./smiles/') !== -1) {
     const str = replaced
       .replace('<img', '')
       .replace('height="32"', '')
       .replace('width="32"', '')
-      .replace('src="/smiles/', ':')
+      .replace('src="./smiles/', ':')
       .replace('.png"', ':')
       .replace('>', '');
     replaced = str;
