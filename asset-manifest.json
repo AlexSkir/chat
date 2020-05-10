@@ -1,27 +1,19 @@
 {
   "files": {
-    "main.css": "/chat/static/css/main.c2fc931b.chunk.css",
-    "main.js": "/chat/static/js/main.6b718bbb.chunk.js",
-    "main.js.map": "/chat/static/js/main.6b718bbb.chunk.js.map",
-    "runtime-main.js": "/chat/static/js/runtime-main.4fdc9441.js",
-    "runtime-main.js.map": "/chat/static/js/runtime-main.4fdc9441.js.map",
-    "static/css/2.8ca7cecf.chunk.css": "/chat/static/css/2.8ca7cecf.chunk.css",
-    "static/js/2.60f1257b.chunk.js": "/chat/static/js/2.60f1257b.chunk.js",
-    "static/js/2.60f1257b.chunk.js.map": "/chat/static/js/2.60f1257b.chunk.js.map",
+    "main.css": "/chat/static/css/main.e8a5842b.chunk.css",
+    "main.js": "/chat/static/js/main.59effd04.chunk.js",
+    "main.js.map": "/chat/static/js/main.59effd04.chunk.js.map",
+    "runtime~main.js": "/chat/static/js/runtime~main.54cd968c.js",
+    "runtime~main.js.map": "/chat/static/js/runtime~main.54cd968c.js.map",
+    "static/css/2.73a3b7f4.chunk.css": "/chat/static/css/2.73a3b7f4.chunk.css",
+    "static/js/2.8f000b12.chunk.js": "/chat/static/js/2.8f000b12.chunk.js",
+    "static/js/2.8f000b12.chunk.js.map": "/chat/static/js/2.8f000b12.chunk.js.map",
     "index.html": "/chat/index.html",
-    "precache-manifest.0d343052c3a9c59e26696c0588601066.js": "/chat/precache-manifest.0d343052c3a9c59e26696c0588601066.js",
+    "precache-manifest.69075a60656e46ea9a640ef2184da3db.js": "/chat/precache-manifest.69075a60656e46ea9a640ef2184da3db.js",
     "service-worker.js": "/chat/service-worker.js",
-    "static/css/2.8ca7cecf.chunk.css.map": "/chat/static/css/2.8ca7cecf.chunk.css.map",
-    "static/css/main.c2fc931b.chunk.css.map": "/chat/static/css/main.c2fc931b.chunk.css.map",
-    "static/js/2.60f1257b.chunk.js.LICENSE.txt": "/chat/static/js/2.60f1257b.chunk.js.LICENSE.txt",
+    "static/css/2.73a3b7f4.chunk.css.map": "/chat/static/css/2.73a3b7f4.chunk.css.map",
+    "static/css/main.e8a5842b.chunk.css.map": "/chat/static/css/main.e8a5842b.chunk.css.map",
     "static/media/chatPage.scss": "/chat/static/media/BG.baad24af.png",
     "static/media/sound.mp3": "/chat/static/media/sound.13620510.mp3"
-  },
-  "entrypoints": [
-    "static/js/runtime-main.4fdc9441.js",
-    "static/css/2.8ca7cecf.chunk.css",
-    "static/js/2.60f1257b.chunk.js",
-    "static/css/main.c2fc931b.chunk.css",
-    "static/js/main.6b718bbb.chunk.js"
-  ]
+  }
 }
