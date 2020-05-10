@@ -4,7 +4,8 @@ import store from 'store/store';
 let messages = [];
 
 export default function connectSocket() {
-  const ws = new BrowserWebSocket('wss://awesome-chat-ws.herokuapp.com/');
+  // const ws = new BrowserWebSocket('wss://awesome-chat-ws.herokuapp.com/');
+  const ws = new BrowserWebSocket('wss://wssproxy.herokuapp.com/');
 
   ws.on('open', () => {
     setTimeout(() => {
