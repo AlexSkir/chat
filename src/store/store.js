@@ -20,7 +20,6 @@ const initialState = {
 };
 
 let mesAll = [];
-let newMessage = [];
 
 function appState(state = initialState, action) {
   switch (action.type) {
@@ -43,40 +42,14 @@ function appState(state = initialState, action) {
         newMessage: action.value
       });
     case 'messages':
-      // if (typeof action.value === 'object') {
-      //   for (const message in action.value) {
-      //     mesAll.push(action.value[message]);
-      //   }
-      // }
-      // return Object.assign({}, state, {
-      //   messages: [...mesAll]
-      // });
-
-      // delete from here
-      if (mesAll.length === 0) {
-        mesAll = action.value;
-      } else {
-        mesAll.map(item => {
-          if (
-            item.id &&
-            mesAll.every(allitems => allitems.id !== action.value[0].id)
-          ) {
-            newMessage = action.value[0];
-            mesAll.push(newMessage);
-            mesAll.slice(0, 100);
-          } else if (!item.id) {
-            console.log(item);
-          }
-        });
-        return Object.assign({}, state, {
-          messages: [...mesAll]
-        });
+      if (typeof action.value === 'object') {
+        for (const message in action.value) {
+          mesAll.push(action.value[message]);
+        }
       }
       return Object.assign({}, state, {
-        messages: mesAll
+        messages: [...mesAll]
       });
-    // delete to there
-
     case 'activeInput':
       return Object.assign({}, state, {
         activeInput: action.value

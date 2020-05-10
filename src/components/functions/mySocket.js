@@ -1,11 +1,11 @@
 import BrowserWebSocket from 'browser-websocket';
 import store from 'store/store';
 
-// let messages = [];
+let messages = [];
 
 export default function connectSocket() {
-  // const ws = new BrowserWebSocket('wss://awesome-chat-ws.herokuapp.com/');
-  const ws = new BrowserWebSocket('wss://wssproxy.herokuapp.com/');
+  const ws = new BrowserWebSocket('wss://awesome-chat-ws.herokuapp.com/');
+  // const ws = new BrowserWebSocket('wss://wssproxy.herokuapp.com/');
 
   ws.on('open', () => {
     setTimeout(() => {
@@ -22,17 +22,15 @@ export default function connectSocket() {
     const mes = JSON.parse(event.data).splice(0, 100).reverse();
     if (mes.length === 1) {
       const newMes = `${mes[0].from}: ${mes[0].message}`;
-      // messages.push(mes[0])
+      messages.push(mes[0])
       store.dispatch({ type: 'newMessage', value: newMes });
-      // store.dispatch({ type: 'messages', value: mes });
-      // } else {
-      //   if (messages.length === 0) {
-      //     messages = mes;
-      //     store.dispatch({ type: 'messages', value: mes });
-      //   }
+      store.dispatch({ type: 'messages', value: mes });
+    } else {
+      if (messages.length === 0) {
+        messages = mes;
+        store.dispatch({ type: 'messages', value: mes });
+      }
     }
-
-    store.dispatch({ type: 'messages', value: mes }); //delete
 
     const div = document.getElementById('messages-area');
     if (div) {
