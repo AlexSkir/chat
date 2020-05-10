@@ -20,10 +20,7 @@ import Status from 'components/wsStatus/wsStatus';
 class Chat extends Component {
   constructor() {
     super();
-    this.state = {
-      messages: []
-    };
-    this.messages = [];
+    this.state = {};
     this.mounted = false;
     this.name = store.getState().login;
     this.ws = connectSocket();
@@ -44,9 +41,7 @@ class Chat extends Component {
   }
 
   componentWillUnmount() {
-    this.setState(null);
     this.mounted = false;
-    this.messages = [];
   }
 
   submitClickHandler() {

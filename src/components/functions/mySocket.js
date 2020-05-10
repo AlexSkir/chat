@@ -1,13 +1,14 @@
 import BrowserWebSocket from 'browser-websocket';
 import store from 'store/store';
 
+let messages = [];
+
 export default function connectSocket() {
   // const ws = new BrowserWebSocket('ws://st-chat.shas.tel');
   // const ws = new BrowserWebSocket('wss://wssproxy.herokuapp.com/');
   const ws = new BrowserWebSocket('wss://awesome-chat-ws.herokuapp.com/');
   // const ws = new BrowserWebSocket('ws://localhost:3000');
 
-  let messages = [];
   ws.on('open', () => {
     setTimeout(() => {
       console.log('open', ws.ws.readyState);
@@ -21,7 +22,6 @@ export default function connectSocket() {
   })
   ws.on('message', event => {
     const mes = JSON.parse(event.data).splice(0, 100).reverse();
-
     if (mes.length === 1) {
       const newMes = `${mes[0].from}: ${mes[0].message}`;
       messages.push(mes[0])
