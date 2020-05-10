@@ -1,6 +1,6 @@
 {
   "name": "chat",
-  "homepage": "https://alexskir.github.io/chat/",
+  "homepage": "https://github.com/AlexSkir/chat/tree/project",
   "version": "0.1.0",
   "private": false,
   "dependencies": {
@@ -35,7 +35,7 @@
   },
   "scripts": {
     "lint": "eslint ./src/**/*.js",
-    "start": "node node_modules/react-scripts/scripts/start.js",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
