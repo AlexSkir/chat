@@ -5,6 +5,7 @@ let messages = [];
 
 export default function connectSocket() {
   const ws = new BrowserWebSocket('wss://awesome-chat-ws.herokuapp.com/');
+  // const ws = new BrowserWebSocket('ws://localhost:3000/');
 
   ws.on('open', () => {
     setTimeout(() => {
@@ -18,6 +19,7 @@ export default function connectSocket() {
     ws.reconnect();
   })
   ws.on('message', event => {
+    console.log(event.data)
     const mes = JSON.parse(event.data).splice(0, 100).reverse();
     if (mes.length === 1) {
       const newMes = `${mes[0].from}: ${mes[0].message}`;
@@ -38,5 +40,6 @@ export default function connectSocket() {
       }, 50);
     }
   });
+
   return ws;
 }
