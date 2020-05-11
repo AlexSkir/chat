@@ -14,7 +14,7 @@ function SmileChatItem(props) {
       <ThemeProvider theme={theme}>
         <div className="row chat-page-item justify-content-end">
           <div className="my-message">
-            <div className="col-auto my-message-wrapper">
+            <div className="col-auto message-wrapper my-message-wrapper">
               <div className="col-auto chat-item-from">{messagePack.from}</div>
               <div className="col-auto chat-item-message">
                 {findSmile(messagePack.message).map((mes, m) => {
@@ -35,7 +35,7 @@ function SmileChatItem(props) {
     <ThemeProvider theme={theme}>
       <div className="row chat-page-item justify-content-start">
         <div className="their-message">
-          <div className="col-auto their-message-wrapper">
+          <div className="col-auto message-wrapper their-message-wrapper">
             <div className="col-auto chat-item-from">{messagePack.from}</div>
             <div className="col-auto chat-item-message">
               {findSmile(messagePack.message).map((mes, m) => {

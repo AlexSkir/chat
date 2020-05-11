@@ -57,10 +57,14 @@
     grid-area: 1/1/1/1;
     width: 100%;
   }
+  .icon-name {
+    display: none;
+  }
 }
 
 @media (max-width: 400px) {
-  .icon-name {
-    font-size: 18px;
+  .account-button {
+    max-width: 80%;
+    overflow-x: hidden;
   }
 }

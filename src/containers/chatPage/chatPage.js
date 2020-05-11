@@ -21,7 +21,6 @@ class Chat extends Component {
     super();
     this.state = {};
     this.mounted = false;
-    this.name = store.getState().login;
     this.ws = connectSocket();
   }
 
@@ -45,7 +44,7 @@ class Chat extends Component {
 
   submitClickHandler() {
     const mess = {
-      from: this.name,
+      from: this.props.login,
       message: replaceSmileWithUnicode($('#inputChat').html())
     };
     this.ws.emit(JSON.stringify(mess));
@@ -70,9 +69,9 @@ class Chat extends Component {
             {this.props.messages.map(item => {
               if (item && item.message) {
                 if (item.message.match(/:\w+:/gm)) {
-                  return <SmileChatItem key={item.id} login={this.name} messagePack={item} />;
+                  return <SmileChatItem key={item.id} login={this.props.login} messagePack={item} />;
                 }
-                return <TextChatItem key={item.id} login={this.name} messagePack={item} />;
+                return <TextChatItem key={item.id} login={this.props.login} messagePack={item} />;
               }
             })}
           </div>
@@ -89,10 +88,16 @@ class Chat extends Component {
 }
 
 Chat.propTypes = {
+  login: PropTypes.string.isRequired,
   status: PropTypes.number.isRequired,
   messages: PropTypes.array.isRequired,
   switch: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]).isRequired
 };
 
-const mapStateToProps = state => ({ status: state.status, messages: state.messages, switch: state.switch });
+const mapStateToProps = state => ({
+  login: state.login,
+  status: state.status,
+  messages: state.messages,
+  switch: state.switch
+});
 export default connect(mapStateToProps)(Chat);

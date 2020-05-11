@@ -13,7 +13,7 @@ function TextChatItem(props) {
       <ThemeProvider theme={theme}>
         <div className="row chat-page-item justify-content-end">
           <div className="my-message">
-            <div className="col-auto my-message-wrapper">
+            <div className="col-auto message-wrapper my-message-wrapper">
               <div className="col-auto chat-item-from">{messagePack.from}</div>
               <div className="col-auto chat-item-message">{messagePack.message}</div>
               <div className="col-auto chat-item-date">{getDate(messagePack.time)}</div>
@@ -27,7 +27,7 @@ function TextChatItem(props) {
     <ThemeProvider theme={theme}>
       <div className="row chat-page-item justify-content-start">
         <div className="their-message">
-          <div className="col-auto their-message-wrapper">
+          <div className="col-auto message-wrapper their-message-wrapper">
             <div className="col-auto chat-item-from">{messagePack.from}</div>
             <div className="w-100" />
             <div className="col-auto chat-item-message">{messagePack.message}</div>

@@ -91,7 +91,7 @@ class Header extends React.Component {
             store.dispatch({ type: 'redirect', value: false });
           }}
         >
-          <img className="header-img d-none d-sm-block" src={chat} alt="" />
+          <img className="header-img d-sm-block" src={chat} alt="" />
           <h5 className="icon-name">Awesome Chat</h5>
         </Link>
         <div className="col-auto account-button">{this.accountButton()}</div>

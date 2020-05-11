@@ -5,6 +5,7 @@ import * as serviceWorker from 'components/Notifications/serviceWorker';
 import sound from 'assets/sound.mp3';
 import $ from 'jquery';
 import store from 'store/store';
+import { findSmile } from 'components/functions/index';
 
 class Notifications extends Component {
   constructor(props) {
@@ -51,10 +52,32 @@ class Notifications extends Component {
     }, 200);
   }
 
+  showSmile(text) {
+    if (text.match(/:\w+:/gm)) {
+      let message = '';
+      let smile = '';
+      let total = [];
+      const smileText = findSmile(text);
+      smileText.map((item, i) => {
+        if (typeof item === 'object') {
+          smile = `./smiles/${item[0]}.png`;
+        } else {
+          message += item;
+        }
+      })
+      total.push(smile);
+      total.push(message);
+      return total;
+    } else {
+      return text;
+    }
+  }
+
   notificationSend(message) {
+    const mes = this.showSmile(message) || '...';
     const now = Date.now();
     const title = `New message at Awesome Chat ${now}`;
-    const body = `Message: ${message || '...'}`;
+    const body = `Message: ${typeof mes === 'object' ? mes[1] : mes}`;
     const tag = now;
     const icon = 'http://mobilusoss.github.io/react-web-notification/example/Notifications_button_24.png';
     const options = {
@@ -63,7 +86,8 @@ class Notifications extends Component {
       icon: icon,
       lang: 'en',
       dir: 'ltr',
-      sound: sound
+      sound: sound,
+      image: typeof mes === 'object' ? mes[0] : ''
     }
     this.setState({
       title: title,
