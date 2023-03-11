@@ -1,5 +1,5 @@
-## website on Heroku: 
-[https://alexskir-awesome-chat.herokuapp.com](https://alexskir-awesome-chat.herokuapp.com)
+## website on Cyclic: 
+[https://uninterested-jay-pocket.cyclic.app/](https://uninterested-jay-pocket.cyclic.app/)
 
 
 ## Task:
