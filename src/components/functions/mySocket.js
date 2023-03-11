@@ -4,7 +4,7 @@ import store from 'store/store';
 let messages = [];
 
 export default function connectSocket() {
-  const ws = new BrowserWebSocket('wss://uninterested-jay-pocket.cyclic.app/');
+  const ws = new BrowserWebSocket('wss://websocket-gelj.onrender.com/');
   // const ws = new BrowserWebSocket('ws://localhost:3000/');
 
   ws.on('open', () => {
