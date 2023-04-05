@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import $ from 'jquery';
 import EmojiPicker from 'emojione-picker';
-import 'emojione-picker/css/picker.css';
 import { makeEmojiFromUnicode } from 'components/functions';
-import 'components/ChatInput/chatInput.scss';
 import MyIconButton from 'components/buttons/iconButtons';
 import Icon from '@material-ui/core/Icon';
 
@@ -65,7 +63,7 @@ class ChatInput extends Component {
           <span
             id="inputChat"
             className="input-text-area row align-items-center"
-            html={this.state.html}
+            __html={this.state.html}
             onChange={this.handleChange}
             contentEditable="true"
             aria-multiline="true"

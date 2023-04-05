@@ -4,7 +4,6 @@ import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import $ from 'jquery';
-import './header.scss';
 import chat from 'assets/chat.png';
 import LoginButton from 'components/buttons/loginButton';
 import LoginInput from 'components/buttons/loginInput';

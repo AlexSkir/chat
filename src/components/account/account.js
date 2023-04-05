@@ -13,7 +13,6 @@ import EditIcon from '@material-ui/icons/Edit';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import theme from 'theme/theme';
-import 'components/account/account.scss';
 import store from 'store/store';
 
 const StyledMenu = withStyles({

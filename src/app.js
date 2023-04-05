@@ -19,14 +19,15 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="container-fluid" onClick={(e) => {
-          const input = $('#changeNameInput');
-          if ($(e.target).is('.container-fluid') || $(e.target).is('.header')) {
-            if (input) {
-              store.dispatch({ type: 'activeInput', value: false });
+        <div className="container-fluid"
+          onClick={(e) => {
+            const input = $('#changeNameInput');
+            if ($(e.target).is('.container-fluid') || $(e.target).is('.header')) {
+              if (input) {
+                store.dispatch({ type: 'activeInput', value: false });
+              }
             }
-          }
-        }}>
+          }}>
           <Header />
           <Route exact path="/">
             {this.props.login && this.props.login !== 'Guest' && this.props.redirect ? <Redirect to="/chat" /> : <Redirect to="/" />}

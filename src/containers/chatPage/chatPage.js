@@ -4,11 +4,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import 'emojione-picker/css/picker.css';
 import $ from 'jquery';
 import store from 'store/store';
 import { replaceSmileWithUnicode } from 'components/functions';
-import 'containers/chatPage/chatPage.scss';
 import TextChatItem from 'components/chatItems/textChatItem';
 import SmileChatItem from 'components/chatItems/smileChatItem';
 import ChatInput from 'components/ChatInput/ChatInput';

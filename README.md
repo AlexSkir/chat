@@ -1,5 +1,5 @@
 ## website on Heroku: 
-[https://alexskir-awesome-chat.herokuapp.com](https://alexskir-awesome-chat.herokuapp.com)
+[https://alexskir.github.io/chat/](https://alexskir.github.io/chat/)
 
 
 ## Task:

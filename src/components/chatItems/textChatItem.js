@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import 'components/chatItems/chatItems.scss';
 import { getDate } from 'components/functions';
 import { ThemeProvider } from '@material-ui/styles';
 import theme from 'theme/theme';
