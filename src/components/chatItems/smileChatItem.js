@@ -1,7 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
 import PropTypes from 'prop-types';
-import 'components/chatItems/chatItems.scss';
 import { getDate, findSmile, makeSRC } from 'components/functions';
 import { ThemeProvider } from '@material-ui/styles';
 import theme from 'theme/theme';

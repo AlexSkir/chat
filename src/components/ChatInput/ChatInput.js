@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import $ from 'jquery';
 import EmojiPicker from 'emojione-picker';
-import 'emojione-picker/css/picker.css';
 import { makeEmojiFromUnicode } from 'components/functions';
-import 'components/ChatInput/chatInput.scss';
 import MyIconButton from 'components/buttons/iconButtons';
 import Icon from '@material-ui/core/Icon';
 
@@ -44,9 +42,9 @@ class ChatInput extends Component {
     }
   }
 
-  handleChange = evt => {
+  handleChange(evt) {
     this.setState({ html: evt.target.value });
-  };
+  }
 
   render() {
     return (
@@ -74,15 +72,15 @@ class ChatInput extends Component {
             tabIndex="-1"
             onClick={e => {
               if ($(e.target).is('img')) {
-                var range = document.createRange();
+                const range = document.createRange();
                 $(e.target).focus();
                 range.selectNodeContents(e.target);
                 range.collapse(true);
                 range.setEndAfter(e.target);
-                var sel = window.getSelection();
+                const sel = window.getSelection();
                 sel.removeAllRanges();
                 sel.addRange(range);
-                $("#inputChat").focus();
+                $('#inputChat').focus();
                 return false;
               }
             }}

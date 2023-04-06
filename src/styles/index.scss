@@ -1,3 +1,13 @@
+@import 'variables';
+@import 'chatPage';
+@import 'MainPage';
+@import 'account';
+@import 'chatInput';
+@import 'chatItems';
+@import 'footer';
+@import 'header';
+@import 'picker';
+
 .container-fluid {
   display: grid;
   grid-template-rows: 50px 1fr 50px;
@@ -5,10 +15,12 @@
   height: calc(var(--vh, 1vh) * 100);
   background: #fad694;
 }
+
 .large-screen-bg {
   position: relative;
   overflow: hidden;
 }
+
 .large-screen-bg::before {
   z-index: 0;
   position: absolute;
@@ -25,7 +37,7 @@
 }
 
 @media (max-width: 500px) {
-  .container-fluid{
+  .container-fluid {
     grid-template-rows: 50px 1fr;
     grid-template-columns: 1fr;
     justify-items: center;

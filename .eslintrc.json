@@ -28,22 +28,10 @@
     }
   },
   "rules": {
-    "array-callback-return": [
-      "error",
-      {
-        "allowImplicit": true
-      }
-    ],
     "consistent-return": [
-      "error",
+      "warn",
       {
         "treatUndefinedAsUnspecified": true
-      }
-    ],
-    "no-nested-ternary": [
-      2,
-      {
-        "allowParensWrapped": true
       }
     ],
     "no-plusplus": [
@@ -66,11 +54,8 @@
         "array": false
       }
     ],
-    "enforceForRenamedProperties": false,
-    "AssignmentExpression": {
-      "array": false,
-      "object": true
-    },
+    "enforceForRenamedProperties": 0,
+    "AssignmentExpression": 0,
     "react/jsx-indent": [
       "error",
       2
@@ -84,6 +69,19 @@
         ]
       }
     ],
+    "react/no-unknown-property": [
+      "error",
+      {
+        "ignore": [
+          "html",
+          "autostart",
+          "loop"
+        ]
+      }
+    ],
+    "react/prop-types": "off",
+    "array-callback-return": "off",
+    "react/no-unused-state": "off",
     "prettier/prettier": [
       "error"
     ]

@@ -7,20 +7,22 @@ import SignalCellularConnectedNoInternet0BarIcon from '@material-ui/icons/Signal
 export default function Status(props) {
   return (
     <div className="status-block">
-      {props.status === 1 ?
+      {props.status === 1 ? (
         <MyIconButton
           onClickHandler={() => undefined}
           theme="success"
           icon={<Icon>checkIcon</Icon>}
-        /> :
-        <><span>reconnecting</span>
+        />
+      ) : (
+        <>
+          <span>reconnecting</span>
           <MyIconButton
             onClickHandler={() => undefined}
             theme="fail"
             icon={<SignalCellularConnectedNoInternet0BarIcon />}
           />
         </>
-      }
+      )}
     </div>
   );
 }

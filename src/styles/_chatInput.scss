@@ -1,4 +1,3 @@
-@import '../../variables.scss';
 .chat-page-form {
   width: 100%;
   height: 80px;
@@ -8,26 +7,32 @@
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
+
 .emoji-button {
   color: $secondary-main;
 }
+
 .emoji-button:hover {
   color: $secondary-dark;
   cursor: pointer;
 }
+
 img.emojione {
   width: 30px;
   cursor: pointer;
 }
+
 .emoji-row>.emoji {
-  width: 30px!important;
-  height: 30px!important;
-  padding: 0!important;
+  width: 30px !important;
+  height: 30px !important;
+  padding: 0 !important;
 }
+
 .input-area {
   width: 100%;
   height: 50px;
 }
+
 .input-text-area {
   width: 87%;
   height: 100%;
@@ -38,6 +43,7 @@ img.emojione {
   overflow-y: auto;
   word-break: break-all;
 }
+
 .input-span {
   border: none;
   margin: 0;
@@ -47,33 +53,40 @@ img.emojione {
   overflow-y: auto;
   word-break: break-all;
 }
+
 .emoji-sizer {
   display: block;
   width: 32px;
   height: 32px;
-  background-size: initial!important;
+  background-size: initial !important;
 }
+
 .chat-buttons {
   display: flex;
 }
+
 .smile-block {
   position: absolute;
   bottom: 40px;
   right: -43px;
   z-index: 10;
 }
+
 .emoji-block {
   position: relative;
   margin-left: -30px;
 }
+
 .send-button {
-  margin-right: -26px!important;
+  margin-right: -26px !important;
 }
+
 .media-selector {
   position: relative;
   margin-left: -30px;
   margin-right: -20px;
 }
+
 .media-selector-info {
   position: absolute;
   display: flex;
@@ -92,41 +105,51 @@ img.emojione {
   .chat-page-form {
     margin-bottom: 20px;
   }
+
   .input-text-area {
     margin-left: 0px;
   }
+
   .chat-buttons {
     margin-right: -40px;
   }
+
   .media-selector {
     margin-left: -65px;
     margin-right: -5px;
   }
 }
+
 @media (max-width: 500px) {
   .chat-page-form {
     margin-top: 10px;
     margin-bottom: 20px;
   }
+
   .input-text-area {
     width: 78%;
     margin-left: 5px;
     margin-right: 0px;
   }
+
   .smile-block {
     bottom: 30px;
     right: -20px;
   }
+
   .media-selector {
     margin-left: -65px;
   }
+
   .chat-buttons {
     margin-right: -40px;
   }
+
   .MuiIconButton-root {
-    padding: 5px!important;
+    padding: 5px !important;
   }
 }
+
 @media (max-width: 400px) {
   .chat-page-form {
     margin-top: 10px;

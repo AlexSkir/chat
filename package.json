@@ -14,9 +14,8 @@
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.13.0",
-    "gh-pages": "^2.2.0",
+    "gh-pages": "^2.0.1",
     "jquery": "^3.4.1",
-    "node-sass": "^4.14.1",
     "prettier": "^1.18.2",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
@@ -24,15 +23,16 @@
     "react-dom": "^16.8.6",
     "react-redux": "^7.1.0",
     "react-router-dom": "^5.0.1",
-    "react-scripts": "3.0.1",
+    "react-scripts": "5.0.1",
     "redux": "^4.0.1",
-    "sass-loader": "^8.0.2",
+    "serve": "^14.2.0",
+    "webpack": "^4.36.0",
     "ws": "^7.1.2"
   },
   "scripts": {
-    "lint": "eslint ./src/**/*.js",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "lint": "eslint ./src/**/*.js --fix",
+    "start": "react-scripts --openssl-legacy-provider start",
+    "build": "react-scripts --openssl-legacy-provider build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy": "gh-pages -d build"
@@ -51,6 +51,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {}
+  }
 }

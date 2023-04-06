@@ -4,11 +4,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import 'emojione-picker/css/picker.css';
 import $ from 'jquery';
 import store from 'store/store';
 import { replaceSmileWithUnicode } from 'components/functions';
-import 'containers/chatPage/chatPage.scss';
 import TextChatItem from 'components/chatItems/textChatItem';
 import SmileChatItem from 'components/chatItems/smileChatItem';
 import ChatInput from 'components/ChatInput/ChatInput';
@@ -69,19 +67,22 @@ class Chat extends Component {
             {this.props.messages.map(item => {
               if (item && item.message) {
                 if (item.message.match(/:\w+:/gm)) {
-                  return <SmileChatItem key={item.id} login={this.props.login} messagePack={item} />;
+                  return (
+                    <SmileChatItem key={item.id} login={this.props.login} messagePack={item} />
+                  );
                 }
                 return <TextChatItem key={item.id} login={this.props.login} messagePack={item} />;
               }
             })}
           </div>
         </div>
-        <ChatInput submitClickHandler={() => {
-          if (this.props.status === 1) {
-            this.submitClickHandler();
-          }
-        }
-        } />
+        <ChatInput
+          submitClickHandler={() => {
+            if (this.props.status === 1) {
+              this.submitClickHandler();
+            }
+          }}
+        />
       </div>
     );
   }
@@ -90,7 +91,7 @@ class Chat extends Component {
 Chat.propTypes = {
   login: PropTypes.string.isRequired,
   status: PropTypes.number.isRequired,
-  messages: PropTypes.array.isRequired,
+  messages: PropTypes.instanceOf(Array).isRequired,
   switch: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]).isRequired
 };
 

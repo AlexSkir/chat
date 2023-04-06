@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import 'containers/mainPage/MainPage.scss';
 import store from 'store/store';
 
 class MainPage extends React.Component {
@@ -17,11 +16,11 @@ class MainPage extends React.Component {
     if (this.props.login === 'Guest') {
       if (this.state.inputActive === false) {
         store.dispatch({ type: 'activeInput', value: true });
-        this.setState({ inputActive: true })
+        this.setState({ inputActive: true });
         e.preventDefault();
       } else {
         store.dispatch({ type: 'activeInput', value: false });
-        this.setState({ inputActive: false })
+        this.setState({ inputActive: false });
         e.preventDefault();
       }
     } else {
@@ -34,7 +33,9 @@ class MainPage extends React.Component {
     return (
       <div
         className="row justify-content-center align-items-center mainPage"
-        onClick={() => this.state.inputActive ? store.dispatch({ type: 'activeInput', value: false }) : null}
+        onClick={() =>
+          this.state.inputActive ? store.dispatch({ type: 'activeInput', value: false }) : null
+        }
         role="button"
         onKeyPress={undefined}
         tabIndex="-1"

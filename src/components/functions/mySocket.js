@@ -4,7 +4,7 @@ import store from 'store/store';
 let messages = [];
 
 export default function connectSocket() {
-  const ws = new BrowserWebSocket('wss://websocket-gelj.onrender.com/');
+  const ws = new BrowserWebSocket('wss://render-ws-server.onrender.com');
   // const ws = new BrowserWebSocket('ws://localhost:3000/');
 
   ws.on('open', () => {
@@ -17,19 +17,19 @@ export default function connectSocket() {
     console.log('connection closed', ws.ws.readyState, 'reconnecting');
     store.dispatch({ type: 'status', value: ws.ws.readyState });
     ws.reconnect();
-  })
+  });
   ws.on('message', event => {
-    const mes = JSON.parse(event.data).splice(0, 100).reverse();
+    const mes = JSON.parse(event.data)
+      .splice(0, 100)
+      .reverse();
     if (mes.length === 1) {
       const newMes = `${mes[0].from}: ${mes[0].message}`;
-      messages.push(mes[0])
+      messages.push(mes[0]);
       store.dispatch({ type: 'newMessage', value: newMes });
       store.dispatch({ type: 'messages', value: mes });
-    } else {
-      if (messages.length === 0) {
-        messages = mes;
-        store.dispatch({ type: 'messages', value: mes });
-      }
+    } else if (messages.length === 0) {
+      messages = mes;
+      store.dispatch({ type: 'messages', value: mes });
     }
 
     const div = document.getElementById('messages-area');
