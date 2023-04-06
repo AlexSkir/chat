@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/media-has-caption */
+/* eslint-disable class-methods-use-this */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -12,20 +14,14 @@ class Notifications extends Component {
     super(props);
     this.state = {
       ignore: false
-    }
+    };
   }
 
   componentDidMount() {
     this.notifyMe();
     setTimeout(() => {
-      this.setState({ ignore: this.props.switch ? false : true });
+      this.setState({ ignore: !this.props.switch });
     }, 100);
-    $(window).blur(() => {
-      this.setState({ activeWindow: false });
-    })
-    $(window).focus(() => {
-      this.setState({ activeWindow: true });
-    })
   }
 
   componentWillReceiveProps() {
@@ -33,19 +29,19 @@ class Notifications extends Component {
       const prop = this.props.newMessage;
       const oldMes = localStorage.getItem('newMes');
       if (prop !== oldMes || oldMes === 'undefined') {
-        this.setState({ newProp: prop })
-        localStorage.setItem('newMes', prop)
+        this.setState({ newProp: prop });
+        localStorage.setItem('newMes', prop);
         if (this.state.ignore === false) {
-          this.notificationSend(prop)
+          this.notificationSend(prop);
         }
       }
     }, 200);
     setTimeout(() => {
       if (this.props.switch !== undefined) {
-        this.setState({ ignore: this.props.switch ? false : true });
+        this.setState({ ignore: !this.props.switch });
         if (this.props.switch === true) {
           if (Notification.permission === 'denied' || Notification.permission === 'default') {
-            this.notifyMe()
+            this.notifyMe();
           }
         }
       }
@@ -56,21 +52,20 @@ class Notifications extends Component {
     if (text.match(/:\w+:/gm)) {
       let message = '';
       let smile = '';
-      let total = [];
+      const total = [];
       const smileText = findSmile(text);
-      smileText.map((item, i) => {
+      smileText.map(item => {
         if (typeof item === 'object') {
           smile = `./smiles/${item[0]}.png`;
         } else {
           message += item;
         }
-      })
+      });
       total.push(smile);
       total.push(message);
       return total;
-    } else {
-      return text;
     }
+    return text;
   }
 
   notificationSend(message) {
@@ -79,32 +74,36 @@ class Notifications extends Component {
     const title = `New message at Awesome Chat ${now}`;
     const body = `Message: ${typeof mes === 'object' ? mes[1] : mes}`;
     const tag = now;
-    const icon = 'http://mobilusoss.github.io/react-web-notification/example/Notifications_button_24.png';
+    const icon =
+      'http://mobilusoss.github.io/react-web-notification/example/Notifications_button_24.png';
     const options = {
-      tag: tag,
-      body: body,
-      icon: icon,
+      tag,
+      body,
+      icon,
       lang: 'en',
       dir: 'ltr',
-      sound: sound,
+      sound,
       image: typeof mes === 'object' ? mes[0] : ''
-    }
+    };
     this.setState({
-      title: title,
-      options: options
+      title
     });
     if ('Notification' in window && document.visibilityState !== 'visible') {
-      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        Notification.requestPermission((result) => {
+      if (
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+      ) {
+        Notification.requestPermission(result => {
           if (result === 'granted') {
-            navigator.serviceWorker.ready.then((registration) => {
-              registration.showNotification(this.state.title, options);
-            }).catch((err) => global.console.log(err));
+            navigator.serviceWorker.ready
+              .then(registration => {
+                registration.showNotification(this.state.title, options);
+              })
+              .catch(err => global.console.log(err));
           }
         });
       } else {
         this.notification = new Notification(this.state.title, options);
-        this.notification.onclick = (event) => {
+        this.notification.onclick = event => {
           event.preventDefault();
           window.focus();
           this.notification.close();
@@ -125,16 +124,18 @@ class Notifications extends Component {
     if (!('Notification' in window)) {
       global.alert('This browser does not support desktop notification');
     } else if (Notification.permission === 'granted' || Notification.permission === 'default') {
-      Notification.requestPermission((permission) => {
+      Notification.requestPermission(permission => {
         if (permission === 'granted') {
-          navigator.serviceWorker.ready.then((registration) => {
-            registration.showNotification('notification permissions have been granted');
-          }).catch((err) => global.console.log(err));
+          navigator.serviceWorker.ready
+            .then(registration => {
+              registration.showNotification('notification permissions have been granted');
+            })
+            .catch(err => global.console.log(err));
         }
       });
     } else if (Notification.permission === 'denied' && this.props.switch === true) {
       global.alert(`You blocked notification request :( 
-    If you want to receive notifications you should unblock it in the browser settings`)
+    If you want to receive notifications you should unblock it in the browser settings`);
       store.dispatch({ type: 'switch', value: false });
     }
   }
@@ -147,9 +148,9 @@ class Notifications extends Component {
 
   render() {
     return (
-      <audio id='sound' preload='auto'>
-        <source src={sound} type='audio/mpeg' />
-        <embed hidden={true} autostart='false' loop={false} src={sound} />
+      <audio id="sound" preload="auto">
+        <source src={sound} type="audio/mpeg" />
+        <embed hidden autostart="false" loop={false} src={sound} />
       </audio>
     );
   }

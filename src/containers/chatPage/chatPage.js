@@ -67,19 +67,22 @@ class Chat extends Component {
             {this.props.messages.map(item => {
               if (item && item.message) {
                 if (item.message.match(/:\w+:/gm)) {
-                  return <SmileChatItem key={item.id} login={this.props.login} messagePack={item} />;
+                  return (
+                    <SmileChatItem key={item.id} login={this.props.login} messagePack={item} />
+                  );
                 }
                 return <TextChatItem key={item.id} login={this.props.login} messagePack={item} />;
               }
             })}
           </div>
         </div>
-        <ChatInput submitClickHandler={() => {
-          if (this.props.status === 1) {
-            this.submitClickHandler();
-          }
-        }
-        } />
+        <ChatInput
+          submitClickHandler={() => {
+            if (this.props.status === 1) {
+              this.submitClickHandler();
+            }
+          }}
+        />
       </div>
     );
   }
@@ -88,7 +91,7 @@ class Chat extends Component {
 Chat.propTypes = {
   login: PropTypes.string.isRequired,
   status: PropTypes.number.isRequired,
-  messages: PropTypes.array.isRequired,
+  messages: PropTypes.instanceOf(Array).isRequired,
   switch: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]).isRequired
 };
 

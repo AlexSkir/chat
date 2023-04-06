@@ -42,9 +42,9 @@ class ChatInput extends Component {
     }
   }
 
-  handleChange = evt => {
+  handleChange(evt) {
     this.setState({ html: evt.target.value });
-  };
+  }
 
   render() {
     return (
@@ -63,7 +63,7 @@ class ChatInput extends Component {
           <span
             id="inputChat"
             className="input-text-area row align-items-center"
-            __html={this.state.html}
+            html={this.state.html}
             onChange={this.handleChange}
             contentEditable="true"
             aria-multiline="true"
@@ -72,15 +72,15 @@ class ChatInput extends Component {
             tabIndex="-1"
             onClick={e => {
               if ($(e.target).is('img')) {
-                var range = document.createRange();
+                const range = document.createRange();
                 $(e.target).focus();
                 range.selectNodeContents(e.target);
                 range.collapse(true);
                 range.setEndAfter(e.target);
-                var sel = window.getSelection();
+                const sel = window.getSelection();
                 sel.removeAllRanges();
                 sel.addRange(range);
-                $("#inputChat").focus();
+                $('#inputChat').focus();
                 return false;
               }
             }}

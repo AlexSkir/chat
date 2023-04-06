@@ -6,7 +6,11 @@ export function makeRandomId() {
   const j = [];
   let x;
   for (let i = 0; i < 20; i += 1) {
-    x = [[48, 57], [65, 90], [97, 122]][(Math.random() * 3) >> 0];
+    x = [
+      [48, 57],
+      [65, 90],
+      [97, 122]
+    ][(Math.random() * 3) >> 0];
     j[i] = String.fromCharCode(((Math.random() * (x[1] - x[0] + 1)) >> 0) + x[0]);
   }
   return j.join('');
@@ -66,8 +70,7 @@ export function replaceSmileWithUnicode(text) {
     replaced = str;
   }
   while (replaced.indexOf('<span') !== -1) {
-    const str = replaced
-      .replace('<span style="font-size: 1rem;">', '').replace('</span>', '');
+    const str = replaced.replace('<span style="font-size: 1rem;">', '').replace('</span>', '');
     replaced = str;
   }
   while (replaced.indexOf('./smiles/') !== -1) {
@@ -95,8 +98,7 @@ function pasteHtmlAtCaret(html) {
       const el = document.createElement('div');
       el.innerHTML = html;
       const frag = document.createDocumentFragment();
-      let lastNode;
-      lastNode = frag.appendChild(html);
+      const lastNode = frag.appendChild(html);
       range.insertNode(frag);
       if (lastNode) {
         range = range.cloneRange();

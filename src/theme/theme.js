@@ -23,7 +23,7 @@ const theme = createTheme({
     success: {
       light: '#e6ffe6',
       main: '#2ac92a',
-      dark: '#288028',
+      dark: '#288028'
     },
     fail: {
       light: '#fff7f5',

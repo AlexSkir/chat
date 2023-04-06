@@ -1,12 +1,17 @@
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable guard-for-in */
 import { createStore } from 'redux';
 
 let switchOption;
 
-if (JSON.parse(localStorage.getItem('switch')) === undefined || JSON.parse(localStorage.getItem('switch')) === null) {
+if (
+  JSON.parse(localStorage.getItem('switch')) === undefined ||
+  JSON.parse(localStorage.getItem('switch')) === null
+) {
   switchOption = true;
   localStorage.setItem('switch', true);
 } else {
-  switchOption = JSON.parse(localStorage.getItem('switch'))
+  switchOption = JSON.parse(localStorage.getItem('switch'));
 }
 
 const initialState = {
@@ -19,7 +24,7 @@ const initialState = {
   redirect: true
 };
 
-let mesAll = [];
+const mesAll = [];
 
 function appState(state = initialState, action) {
   switch (action.type) {

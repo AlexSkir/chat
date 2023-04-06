@@ -66,7 +66,7 @@ export default function Account(props) {
           aria-haspopup="true"
           variant="contained"
           color="secondary"
-          onClick={handleClick}
+          onClick={e => handleClick(e)}
           style={{ outline: 'none' }}
         >
           {props.name}
@@ -77,14 +77,13 @@ export default function Account(props) {
           anchorEl={anchorEl}
           keepMounted
           open={Boolean(anchorEl)}
-          onClose={handleClose}
+          onClose={e => handleClose(e)}
         >
           <StyledMenuItem
             onClick={() => {
               setAnchorEl(null);
               props.editNameHandler();
             }}
-          // onBlur={() => store.dispatch({ type: 'activeInput', value: false })}
           >
             <ListItemIcon>
               <EditIcon />
@@ -94,7 +93,7 @@ export default function Account(props) {
           <StyledMenuItem
             onClick={() => {
               setAnchorEl(null);
-              store.dispatch({ type: 'redirect', value: true })
+              store.dispatch({ type: 'redirect', value: true });
             }}
           >
             <ListItemIcon>

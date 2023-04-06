@@ -9,19 +9,19 @@ const CustomSwitch = withStyles({
   switchBase: {
     color: theme.palette.golden.dark,
     '&$checked': {
-      color: theme.palette.primary.main,
+      color: theme.palette.primary.main
     },
     '&$checked + $track': {
-      backgroundColor: theme.palette.primary.dark,
-    },
+      backgroundColor: theme.palette.primary.dark
+    }
   },
   checked: {},
-  track: {},
+  track: {}
 })(Switch);
 
 export default function Switcher(props) {
   const [state, setState] = React.useState({
-    checked: props.ignore,
+    checked: props.ignore
   });
 
   const handleChange = name => event => {
@@ -32,11 +32,7 @@ export default function Switcher(props) {
   return (
     <FormControlLabel
       control={
-        <CustomSwitch
-          checked={state.checked}
-          onChange={handleChange('checked')}
-          value="checked"
-        />
+        <CustomSwitch checked={state.checked} onChange={handleChange('checked')} value="checked" />
       }
       label="Notifications"
     />

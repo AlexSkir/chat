@@ -22,7 +22,10 @@ class Header extends React.Component {
   }
 
   componentWillMount() {
-    this.setState({ name: this.props.login, isLoggedIn: this.props.login !== 'Guest' ? true : false });
+    this.setState({
+      name: this.props.login,
+      isLoggedIn: this.props.login !== 'Guest'
+    });
   }
 
   showInput() {
@@ -42,15 +45,14 @@ class Header extends React.Component {
       store.dispatch({ type: 'redirect', value: true });
       store.dispatch({ type: 'activeInput', value: false });
       this.setState({ active: false, isLoggedIn: true, name, error: false });
-      return <Redirect to="/chat" />
-    } else {
-      this.setState({ error: true });
-      setTimeout(() => {
-        if ($('.input-error') && !$('.input-error').hasClass('hidden')) {
-          this.setState({ error: false });
-        }
-      }, 5000);
+      return <Redirect to="/chat" />;
     }
+    this.setState({ error: true });
+    setTimeout(() => {
+      if ($('.input-error') && !$('.input-error').hasClass('hidden')) {
+        this.setState({ error: false });
+      }
+    }, 5000);
   }
 
   input() {
@@ -58,7 +60,8 @@ class Header extends React.Component {
       return (
         <div id="changeNameInput" className="login-input-block">
           <LoginInput getInputLogin={e => this.inputOnChange(e)} />
-        </div>);
+        </div>
+      );
     }
   }
 

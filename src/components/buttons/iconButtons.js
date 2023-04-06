@@ -11,12 +11,12 @@ export default function MyIconButton(props) {
       position: 'absolute'
     },
     iconHover: {
-      color: theme.palette[props.theme]['main'],
+      color: theme.palette[props.theme].main,
       '&:hover': {
-        color: theme.palette[props.theme]['light']
+        color: theme.palette[props.theme].light
       },
       '&:active': {
-        color: theme.palette[props.theme]['dark']
+        color: theme.palette[props.theme].dark
       }
     }
   }));

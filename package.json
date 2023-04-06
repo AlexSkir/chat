@@ -23,14 +23,13 @@
     "react-dom": "^16.8.6",
     "react-redux": "^7.1.0",
     "react-router-dom": "^5.0.1",
-    "react-scripts": "3.0.1",
+    "react-scripts": "5.0.1",
     "redux": "^4.0.1",
-    "sass-loader": "^8.0.2",
-    "webpack": "^4.29.6",
+    "webpack": "^4.36.0",
     "ws": "^7.1.2"
   },
   "scripts": {
-    "lint": "eslint ./src/**/*.js",
+    "lint": "eslint ./src/**/*.js --fix",
     "start": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts --openssl-legacy-provider build",
     "test": "react-scripts test",
