@@ -1,6 +1,6 @@
 
-## gh-pages: 
-[https://alexskir.github.io/chat/](https://alexskir.github.io/chat/)
+## demo website, deployed at render: 
+[https://chat-render-9rxz.onrender.com/](https://chat-render-9rxz.onrender.com/)
 
 
 ## Task:
