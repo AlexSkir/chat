@@ -15,6 +15,7 @@
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.13.0",
     "gh-pages": "^2.0.1",
+    "gh-pages-deploy": "^0.5.1",
     "jquery": "^3.4.1",
     "prettier": "^1.18.2",
     "prop-types": "^15.7.2",
@@ -35,7 +36,11 @@
     "build": "react-scripts --openssl-legacy-provider build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages-deploy"
+  },
+  "gh-pages-deploy": {
+    "staticpath": "build",
+    "commit": "deploy build files to gh-pages"
   },
   "eslintConfig": {
     "extends": "react-app"
