@@ -37,10 +37,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           name: my-artifact-build
-          path: |
-            ./build/
-            ./build/smiles/
-            ./build/static/
+          path: '**/build/**'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
